@@ -4,9 +4,9 @@ import sys
 from unittest.mock import MagicMock, patch, mock_open
 from src.services.outlook_service import OutlookService
 
-@patch("win32com.client.Dispatch")
-def test_create_draft_windows(mock_dispatch, tmp_path):
+def test_create_draft_windows(tmp_path):
     # Mock the Outlook application
+    mock_dispatch = MagicMock()
     mock_outlook = MagicMock()
     mock_mail = MagicMock()
     mock_outlook.CreateItem.return_value = mock_mail
@@ -32,6 +32,8 @@ def test_create_draft_windows(mock_dispatch, tmp_path):
             )
             
             assert success is True
+            mock_dispatch.assert_called_once_with("Outlook.Application")
+            mock_outlook.CreateItem.assert_called_once_with(0)
             assert mock_mail.To == "test@example.com"
             assert mock_mail.Subject == "[테스트] 요약본"
             assert mock_mail.HTMLBody == "<h1>이메일 테스트</h1>"
@@ -55,8 +57,13 @@ def test_create_draft_non_windows(mock_file, mock_makedirs):
         mock_makedirs.assert_called_once_with("data/drafts", exist_ok=True)
         # Verify it writes to some HTML file inside data/drafts/
         mock_file.assert_called_once()
-        # Check that it writes the body to the file
-        mock_file().write.assert_called_once_with("<h1>이메일 테스트</h1>")
+        
+        # Check that it writes the body containing attachment waiting info
+        written_content = mock_file().write.call_args[0][0]
+        assert "이메일 테스트" in written_content
+        assert "[첨부파일 대기]" in written_content
+        assert "test.pdf" in written_content
+
 
 def test_generate_html_body():
     service = OutlookService(recipient="test@example.com")

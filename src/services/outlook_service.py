@@ -20,7 +20,9 @@ class OutlookService:
         """
         if sys.platform != "win32":
             logger.warning("Outlook integration is only supported on Windows. Falling back to local draft file.")
-            return self._save_local_draft(subject, body)
+            if attachment_paths:
+                logger.warning(f"Attachments are not supported on non-Windows platforms. Planned attachments will be listed in the fallback file: {attachment_paths}")
+            return self._save_local_draft(subject, body, attachment_paths)
 
         try:
             import win32com.client
@@ -43,7 +45,7 @@ class OutlookService:
             logger.error(f"Error creating Outlook draft: {e}", exc_info=True)
             return False
 
-    def _save_local_draft(self, subject: str, body: str) -> bool:
+    def _save_local_draft(self, subject: str, body: str, attachment_paths: list = None) -> bool:
         """
         Saves the email draft as a local HTML file under 'data/drafts/' as a fallback.
         """
@@ -53,6 +55,18 @@ class OutlookService:
             sanitized_subject = re.sub(r'[\\/*?:"<>| ]', '_', subject)
             filename = f"draft_{sanitized_subject}_{int(time.time())}.html"
             filepath = os.path.join("data/drafts", filename)
+            
+            if attachment_paths:
+                attachment_info = "<hr style='border: 1px solid #e2e8f0; margin-top: 20px;'><div style='padding: 10px; background-color: #f1f5f9; border-radius: 4px; font-size: 12px; color: #475569;'><strong>[첨부파일 대기]</strong><ul>"
+                for path in attachment_paths:
+                    base_name = os.path.basename(path)
+                    attachment_info += f"<li>{base_name} ({path})</li>"
+                attachment_info += "</ul></div>"
+                
+                if "</body>" in body:
+                    body = body.replace("</body>", f"{attachment_info}</body>")
+                else:
+                    body += attachment_info
             
             with open(filepath, "w", encoding="utf-8") as f:
                 f.write(body)
