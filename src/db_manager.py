@@ -32,11 +32,12 @@ class DBManager:
             cursor.execute("SELECT 1 FROM reports WHERE report_key = ?", (report_key,))
             return cursor.fetchone() is not None
 
-    def add_report(self, report_key, source_name, title, pdf_path, author=None, publish_date=None, summary_json=None):
+    def add_report(self, report_key, source_name, title, pdf_path, author=None, publish_date=None, summary_json=None, draft_created_at=None):
         with sqlite3.connect(self.db_path) as conn:
             cursor = conn.cursor()
             cursor.execute("""
-                INSERT INTO reports (report_key, source_name, title, pdf_path, author, publish_date, summary_json)
-                VALUES (?, ?, ?, ?, ?, ?, ?)
-            """, (report_key, source_name, title, pdf_path, author, publish_date, summary_json))
+                INSERT INTO reports (report_key, source_name, title, pdf_path, author, publish_date, summary_json, draft_created_at)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+            """, (report_key, source_name, title, pdf_path, author, publish_date, summary_json, draft_created_at))
             conn.commit()
+
