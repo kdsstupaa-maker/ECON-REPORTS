@@ -1,0 +1,8 @@
+gemini:
+  api_key: "YOUR_GEMINI_API_KEY"
+  model: "gemini-1.5-flash"
+email:
+  recipient: "team@company.com"
+storage:
+  db_path: "data/db/reports.db"
+  pdf_dir: "data/pdfs"
