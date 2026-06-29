@@ -43,8 +43,12 @@ class BOKCrawler(BaseCrawler):
                 for dl in downloads:
                     dl_href = dl.get("href", "")
                     if dl_href and ".pdf" in dl_href:
-                        pdf_url = "https://www.bok.or.kr" + dl_href
+                        pdf_url = urllib.parse.urljoin("https://www.bok.or.kr", dl_href)
                         break
+            
+            # Skip if there is no PDF url
+            if not pdf_url:
+                continue
             
             # 작성일 파싱
             date_el = item.find("span", class_="date")
@@ -54,6 +58,8 @@ class BOKCrawler(BaseCrawler):
                 if hidden_el:
                     hidden_el.decompose()
                 date = date_el.get_text(strip=True)
+                # Normalize date to YYYY-MM-DD format
+                date = date.replace(".", "-")
             
             reports.append({
                 "key": key,

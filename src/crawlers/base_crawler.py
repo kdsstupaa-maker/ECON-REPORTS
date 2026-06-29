@@ -20,9 +20,11 @@ class BaseCrawler(ABC):
         file_path = os.path.join(target_dir, filename)
 
         headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
-        response = requests.get(url, headers=headers, timeout=30)
+        response = requests.get(url, headers=headers, stream=True, timeout=30)
         response.raise_for_status()
 
         with open(file_path, "wb") as f:
-            f.write(response.content)
+            for chunk in response.iter_content(chunk_size=8192):
+                if chunk:
+                    f.write(chunk)
         return os.path.abspath(file_path)
