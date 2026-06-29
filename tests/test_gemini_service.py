@@ -45,6 +45,7 @@ def test_gemini_summarize_pdf(mock_model_class, mock_upload, mock_delete, tmp_pa
     # Verify mock calls
     mock_upload.assert_called_once_with(path=pdf_path)
     mock_delete.assert_called_once_with("files/mock_file_id")
+    mock_model_class.assert_called_once_with("gemini-1.5-flash", generation_config={"response_mime_type": "application/json"})
 
 
 def test_gemini_summarize_pdf_file_not_found():
@@ -117,4 +118,66 @@ def test_gemini_summarize_pdf_failed_state(mock_sleep, mock_model_class, mock_up
     with pytest.raises(ValueError):
         summarizer.summarize_pdf(pdf_path)
         
+    mock_delete.assert_called_once_with("files/mock_file_id")
+
+
+@patch("google.generativeai.delete_file")
+@patch("google.generativeai.get_file")
+@patch("google.generativeai.upload_file")
+@patch("google.generativeai.GenerativeModel")
+@patch("time.sleep")
+def test_gemini_summarize_pdf_timeout_state(mock_sleep, mock_model_class, mock_upload, mock_get_file, mock_delete, tmp_path):
+    pdf_path = os.path.join(tmp_path, "mock.pdf")
+    with open(pdf_path, "wb") as f:
+        f.write(b"%PDF-1.4 mock content")
+        
+    # Setup upload_file to return PROCESSING
+    mock_file_obj = MagicMock()
+    mock_file_obj.name = "files/mock_file_id"
+    mock_file_obj.state.name = "PROCESSING"
+    mock_upload.return_value = mock_file_obj
+    
+    # Keep returning PROCESSING state
+    mock_file_processing = MagicMock()
+    mock_file_processing.name = "files/mock_file_id"
+    mock_file_processing.state.name = "PROCESSING"
+    mock_get_file.return_value = mock_file_processing
+    
+    summarizer = GeminiSummarizer(api_key="fake_key", model_name="gemini-1.5-flash")
+    # Should raise TimeoutError when reaching timeout limit
+    with pytest.raises(TimeoutError):
+        summarizer.summarize_pdf(pdf_path)
+        
+    # Verify file is deleted even on timeout
+    mock_delete.assert_called_once_with("files/mock_file_id")
+
+
+@patch("google.generativeai.delete_file")
+@patch("google.generativeai.upload_file")
+@patch("google.generativeai.GenerativeModel")
+def test_gemini_summarize_pdf_json_decode_error(mock_model_class, mock_upload, mock_delete, tmp_path):
+    pdf_path = os.path.join(tmp_path, "mock.pdf")
+    with open(pdf_path, "wb") as f:
+        f.write(b"%PDF-1.4 mock content")
+        
+    # Setup Mock file
+    mock_file_obj = MagicMock()
+    mock_file_obj.name = "files/mock_file_id"
+    mock_file_obj.state.name = "ACTIVE"
+    mock_upload.return_value = mock_file_obj
+    
+    # Model returns invalid json
+    mock_model = MagicMock()
+    mock_response = MagicMock()
+    mock_response.text = "this is not JSON content!"
+    mock_model.generate_content.return_value = mock_response
+    mock_model_class.return_value = mock_model
+    
+    summarizer = GeminiSummarizer(api_key="fake_key", model_name="gemini-1.5-flash")
+    
+    # Should raise ValueError indicating JSON decoding failure
+    with pytest.raises(ValueError, match="Failed to parse Gemini response as JSON"):
+        summarizer.summarize_pdf(pdf_path)
+        
+    # Verify clean-up deletion was called
     mock_delete.assert_called_once_with("files/mock_file_id")

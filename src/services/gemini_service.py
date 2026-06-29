@@ -22,16 +22,24 @@ class GeminiSummarizer:
         uploaded_file = genai.upload_file(path=pdf_path)
         try:
             file_state = uploaded_file.state.name
+            max_attempts = 150  # 150 attempts * 2s = 300s (5 minutes)
+            attempts = 0
             while file_state == "PROCESSING":
+                if attempts >= max_attempts:
+                    raise TimeoutError(f"File processing timed out on Gemini servers for: {pdf_path}")
                 time.sleep(2)
                 retrieved = genai.get_file(uploaded_file.name)
                 file_state = retrieved.state.name
+                attempts += 1
 
             if file_state == "FAILED":
                 raise ValueError(f"File processing failed on Gemini servers for: {pdf_path}")
 
-            # Initialize the model and generate the summary
-            model = genai.GenerativeModel(self.model_name)
+            # Initialize the model with native JSON output enforcement
+            model = genai.GenerativeModel(
+                self.model_name,
+                generation_config={"response_mime_type": "application/json"}
+            )
             
             prompt = (
                 "You are an insurance company credit risk auditor. Your task is to analyze "
@@ -55,16 +63,11 @@ class GeminiSummarizer:
             
             response = model.generate_content([uploaded_file, prompt])
             
-            # Clean response text from potential markdown code fences
-            response_text = response.text.strip()
-            if response_text.startswith("```"):
-                first_newline = response_text.find("\n")
-                if first_newline != -1:
-                    response_text = response_text[first_newline:].strip()
-                if response_text.endswith("```"):
-                    response_text = response_text[:-3].strip()
-                    
-            return json.loads(response_text)
+            # Robust JSON parsing
+            try:
+                return json.loads(response.text)
+            except json.JSONDecodeError as e:
+                raise ValueError(f"Failed to parse Gemini response as JSON: {e}") from e
             
         finally:
             try:
