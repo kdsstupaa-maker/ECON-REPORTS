@@ -25,12 +25,15 @@ class DBManager:
                 )
             """)
             conn.commit()
+        conn.close()
 
     def report_exists(self, report_key):
         with sqlite3.connect(self.db_path) as conn:
             cursor = conn.cursor()
             cursor.execute("SELECT 1 FROM reports WHERE report_key = ?", (report_key,))
-            return cursor.fetchone() is not None
+            result = cursor.fetchone() is not None
+        conn.close()
+        return result
 
     def add_report(self, report_key, source_name, title, pdf_path, author=None, publish_date=None, summary_json=None, draft_created_at=None):
         with sqlite3.connect(self.db_path) as conn:
@@ -40,5 +43,6 @@ class DBManager:
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?)
             """, (report_key, source_name, title, pdf_path, author, publish_date, summary_json, draft_created_at))
             conn.commit()
+        conn.close()
 
 

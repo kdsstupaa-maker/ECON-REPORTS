@@ -52,8 +52,8 @@ class OutlookService:
         try:
             os.makedirs("data/drafts", exist_ok=True)
             # Sanitize subject to be a safe filename
-            sanitized_subject = re.sub(r'[\\/*?:"<>| ]', '_', subject)
-            filename = f"draft_{sanitized_subject}_{int(time.time())}.html"
+            safe_subject = re.sub(r"[\\/*?\"<>|]", "", subject).strip()[:50]
+            filename = f"draft_{safe_subject}_{int(time.time())}.html"
             filepath = os.path.join("data/drafts", filename)
             
             if attachment_paths:

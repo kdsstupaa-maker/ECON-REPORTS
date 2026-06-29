@@ -57,9 +57,8 @@ class BOKCrawler(BaseCrawler):
                 hidden_el = date_el.find("span", class_="hidden")
                 if hidden_el:
                     hidden_el.decompose()
-                date = date_el.get_text(strip=True)
                 # Normalize date to YYYY-MM-DD format
-                date = date.replace(".", "-")
+                date = date_el.text.strip().rstrip(".").replace(".", "-")
             
             reports.append({
                 "key": key,

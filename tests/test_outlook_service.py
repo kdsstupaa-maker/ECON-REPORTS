@@ -140,3 +140,30 @@ def test_create_draft_windows_missing_attachment(tmp_path):
             mock_mail.Save.assert_called_once()
 
 
+@patch("src.services.outlook_service.os.makedirs")
+@patch("src.services.outlook_service.open", new_callable=mock_open)
+def test_save_local_draft_truncation(mock_file, mock_makedirs):
+    with patch("sys.platform", "linux"):
+        service = OutlookService(recipient="test@example.com")
+        
+        # A long subject with invalid characters
+        long_subject = "A" * 60 + '\\/*?"<>|'
+        success = service.create_draft(
+            subject=long_subject,
+            body="<h1>Truncation test</h1>"
+        )
+        
+        assert success is True
+        
+        # Verify the filename contains only up to 50 sanitized chars
+        args, kwargs = mock_file.call_args
+        filepath = args[0]
+        filename = os.path.basename(filepath)
+        
+        # The filename format is: draft_{safe_subject}_{timestamp}.html
+        # Since safe_subject should be exactly "A" * 50, filename should start with draft_ + "A" * 50 + "_"
+        expected_prefix = "draft_" + "A" * 50 + "_"
+        assert filename.startswith(expected_prefix)
+        assert filename.endswith(".html")
+
+
