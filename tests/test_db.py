@@ -35,3 +35,22 @@ def test_db_insert_and_exists(tmp_path):
         assert row[3] == "/path/to/pdf"
         assert row[4] == "2026-06-29T12:00:00"
 
+def test_db_duplicate_insert(tmp_path):
+    db_file = os.path.join(tmp_path, "test.db")
+    db = DBManager(db_file)
+    db.initialize()
+    
+    db.add_report("bok_123", "source1", "title1", "path1")
+    
+    # This should not raise sqlite3.IntegrityError
+    db.add_report("bok_123", "source2", "title2", "path2")
+    
+    # Verify that the first insert is kept (using INSERT OR IGNORE)
+    import sqlite3
+    with sqlite3.connect(db_file) as conn:
+        cursor = conn.cursor()
+        cursor.execute("SELECT source_name, title, pdf_path FROM reports WHERE report_key = ?", ("bok_123",))
+        row = cursor.fetchone()
+        assert row[0] == "source1"
+
+

@@ -36,8 +36,9 @@ class DBManager:
         with sqlite3.connect(self.db_path) as conn:
             cursor = conn.cursor()
             cursor.execute("""
-                INSERT INTO reports (report_key, source_name, title, pdf_path, author, publish_date, summary_json, draft_created_at)
+                INSERT OR IGNORE INTO reports (report_key, source_name, title, pdf_path, author, publish_date, summary_json, draft_created_at)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?)
             """, (report_key, source_name, title, pdf_path, author, publish_date, summary_json, draft_created_at))
             conn.commit()
+
 
