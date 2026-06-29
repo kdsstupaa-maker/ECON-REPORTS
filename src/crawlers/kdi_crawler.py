@@ -1,3 +1,4 @@
+import datetime
 import urllib.parse
 import re
 from bs4 import BeautifulSoup
@@ -24,6 +25,8 @@ class KDICrawler(BaseCrawler):
             
         items = ul.find_all("li", recursive=False)
         for item in items:
+            if len(reports) >= 5:
+                break
             tit_el = item.find("div", class_="rpt_tit")
             if not tit_el:
                 continue
@@ -50,7 +53,7 @@ class KDICrawler(BaseCrawler):
             if not btn or "onclick" not in btn.attrs:
                 continue
             onclick_val = btn["onclick"]
-            match = re.search(r"location\.href\s*=\s*'([^']+)'", onclick_val)
+            match = re.search(r"location\.href\s*=\s*['\"]([^'\"]+)['\"]", onclick_val)
             if not match:
                 continue
             dl_href = match.group(1)
@@ -79,13 +82,12 @@ class KDICrawler(BaseCrawler):
                     if title_tag:
                         span_date = title_tag.find("span")
                         if span_date:
-                            date = span_date.text.strip().replace(".", "-")
+                            date = span_date.text.strip().rstrip(".").replace(".", "-")
             except Exception as e:
                 print(f"[WARNING] Failed to fetch publication date for {key}: {e}")
                 
             if not date:
                 # fallback if not found
-                import datetime
                 date = datetime.date.today().isoformat()
                 
             reports.append({
@@ -96,4 +98,4 @@ class KDICrawler(BaseCrawler):
                 "date": date
             })
             
-        return reports[:5]
+        return reports
