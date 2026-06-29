@@ -90,3 +90,53 @@ def test_generate_html_body():
     assert "통화정책" in html
     assert "<html>" in html.lower()
 
+def test_create_draft_windows_exception():
+    # Mock the win32com client dispatch to raise Exception
+    mock_dispatch = MagicMock(side_effect=Exception("COM initialization failed"))
+    
+    # Force platform flag to be win32
+    with patch("sys.platform", "win32"):
+        mock_win32com = MagicMock()
+        mock_win32com.client = MagicMock()
+        mock_win32com.client.Dispatch = mock_dispatch
+        
+        with patch.dict("sys.modules", {"win32com": mock_win32com, "win32com.client": mock_win32com.client}):
+            service = OutlookService(recipient="test@example.com")
+            success = service.create_draft(
+                subject="[테스트] 오류 테스트",
+                body="<h1>오류 테스트</h1>"
+            )
+            assert success is False
+
+def test_create_draft_windows_missing_attachment(tmp_path):
+    mock_dispatch = MagicMock()
+    mock_outlook = MagicMock()
+    mock_mail = MagicMock()
+    mock_outlook.CreateItem.return_value = mock_mail
+    mock_dispatch.return_value = mock_outlook
+    
+    # Create one existing attachment and one missing attachment
+    existing_file = tmp_path / "exist.pdf"
+    existing_file.write_bytes(b"dummy pdf content")
+    missing_file = tmp_path / "missing.pdf"
+    
+    # Force platform flag to be win32
+    with patch("sys.platform", "win32"):
+        mock_win32com = MagicMock()
+        mock_win32com.client = MagicMock()
+        mock_win32com.client.Dispatch = mock_dispatch
+        
+        with patch.dict("sys.modules", {"win32com": mock_win32com, "win32com.client": mock_win32com.client}):
+            service = OutlookService(recipient="test@example.com")
+            success = service.create_draft(
+                subject="[테스트] 미존재 첨부파일",
+                body="<h1>미존재 첨부파일</h1>",
+                attachment_paths=[str(existing_file), str(missing_file)]
+            )
+            
+            assert success is True
+            # Assert only the existing file is added to attachments
+            mock_mail.Attachments.Add.assert_called_once_with(os.path.abspath(str(existing_file)))
+            mock_mail.Save.assert_called_once()
+
+

@@ -63,8 +63,8 @@ class OutlookService:
                     attachment_info += f"<li>{base_name} ({path})</li>"
                 attachment_info += "</ul></div>"
                 
-                if "</body>" in body:
-                    body = body.replace("</body>", f"{attachment_info}</body>")
+                if re.search(r"(?i)</body>", body):
+                    body = re.sub(r"(?i)</body>", f"{attachment_info}</body>", body, count=1)
                 else:
                     body += attachment_info
             
@@ -102,8 +102,8 @@ class OutlookService:
                 #{keyword}
             </span>"""
 
-        upside_risk = implication.get("upside_risk", "N/A")
-        downside_risk = implication.get("downside_risk", "N/A")
+        upside_risk = implication.get("upside_risk") or "N/A"
+        downside_risk = implication.get("downside_risk") or "N/A"
 
         html_template = f"""<!DOCTYPE html>
 <html>
@@ -114,7 +114,7 @@ class OutlookService:
     <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); border: 1px solid #e2e8f0; overflow: hidden; border-collapse: separate;">
         <!-- Header -->
         <tr>
-            <td style="padding: 35px 40px; background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: #ffffff;">
+            <td style="padding: 35px 40px; background-color: #1e3a8a; background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: #ffffff;">
                 <span style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; background-color: rgba(255, 255, 255, 0.2); padding: 4px 8px; border-radius: 4px; display: inline-block; margin-bottom: 12px;">{source}</span>
                 <h1 style="margin: 0; font-size: 24px; font-weight: 700; line-height: 1.3; letter-spacing: -0.02em;">{title}</h1>
             </td>
