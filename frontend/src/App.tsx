@@ -37,7 +37,8 @@ function App() {
     try {
       const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
       const res = await axios.get(`${API_BASE_URL}/api/reports`, {
-        params: { search, source: selectedSource }
+        params: { search, source: selectedSource },
+        headers: { 'Bypass-Tunnel-Remainder': 'true' }
       });
       setReports(res.data);
     } catch (e) {
