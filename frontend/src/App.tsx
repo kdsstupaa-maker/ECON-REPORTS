@@ -35,7 +35,8 @@ function App() {
 
   const fetchReports = async () => {
     try {
-      const res = await axios.get('http://localhost:8000/api/reports', {
+      const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
+      const res = await axios.get(`${API_BASE_URL}/api/reports`, {
         params: { search, source: selectedSource }
       });
       setReports(res.data);
@@ -45,7 +46,8 @@ function App() {
   };
 
   const handleDownload = (id: number) => {
-    window.open(`http://localhost:8000/api/reports/${id}/pdf`, '_blank');
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
+    window.open(`${API_BASE_URL}/api/reports/${id}/pdf`, '_blank');
   };
 
   return (
