@@ -19,15 +19,9 @@
     </div>
 
     <script>
-        const API_BASE_URL = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') 
-            ? '' 
-            : 'https://kds-econ-reports.loca.lt';
-
         async function fetchReports() {
             try {
-                const response = await fetch(API_BASE_URL + '/api/reports', {
-                    headers: { 'Bypass-Tunnel-Remainder': 'true' }
-                });
+                const response = await fetch('/api/reports');
                 const reports = await response.json();
                 const container = document.getElementById('report-container');
                 
@@ -92,7 +86,7 @@
                         card.className = 'report-card';
                         
                         const fileType = report.type || 'PDF';
-                        const linkHref = report.filename ? `${API_BASE_URL}/pdfs/${report.filename}` : report.url;
+                        const linkHref = report.filename ? `/pdfs/${report.filename}` : report.url;
                         const btnText = report.filename ? `${fileType} 보기` : `원문 보기`;
                         const downloadAttr = report.filename ? `download="${report.filename}"` : '';
                         

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" href="/static/commons/css/font-real.css">
+<link rel="stylesheet" href="/static/fss/css/sub.css">
+<link rel="stylesheet" href="/static/fss/css/sub_new.css">
+<script src="/static/jslibrary/jquery-3.5.1.min.js"></script>
+<script src="/static/jslibrary/bootstrap-datepicker-1.9.0-dist/js/bootstrap-datepicker.min.js"></script>
+
+<title></title>
+<script>
+	$(function () {
+		if($('.popwrap>.set').height() == undefined){
+			window.resizeTo(window.outerWidth,$('.popwrap>*').height() + 80)
+		}else{
+			window.resizeTo(window.outerWidth,$('.popwrap>.set').height() + 80)
+		}
+	});
+
+	$(document).ready(function() {
+		$("a[href$='ready.do?menuNo=201136']").click(function() {
+			openChat();
+			return false;
+		});
+	});
+
+	function openChat() {
+		var chatWindow;
+		var chat_popup_w = 460;
+		var chat_popup_h = 780;
+		if(chatWindow === undefined || chatWindow.location.href === undefined) {
+			var chat_popup_x = screen.availWidth - chat_popup_w;     var chat_popup_y = screen.availHeight-chat_popup_h;      var host = window.location.protocol + "//" + window.location.host;
+			var url = host + "/ichat_fss/chatbot.do";
+			chatWindow = window.open(url, "openChatForm" ,'width='+chat_popup_w+'px, height='+chat_popup_h+'px, left='+chat_popup_x+ ', top='+chat_popup_y + ', status=no, location=no, toolbar=no, menubar=no, scrollbars=no, resizable=yes');
+		} else {
+			chatWindow.focus();
+		}
+	}
+</script>
+<style>
+	.popwrap{overflow:auto;}
+</style>
+</head>
+<body id="popup">
+<div class="popwrap">
+	
+
+
+
+
+
+
+
+<div class="set">
+	<h1 class="popwrap__header"></h1>
+	<div class="popwrap__body">
+		<div class="iframe">
+			<iframe id="docFrm" name="docFrm" style="width:100%; height:1000px;" src="https://vod2.fss.or.kr/ctrl/viewer_ssl.aspx?filePath=https%3A%2F%2Fwww.fss.or.kr%2Ffss%2Fcmmn%2Ffile%2FfileDown.do%3FmenuNo%3D200218%26atchFileId%3Db1fe19ce9e1342e1a3830042224b34dd%26fileSn%3D1%26bbsId%3D&type=jpg&dpi=96&FileName=docView.hwp" title=""></iframe>
+		</div>
+	</div>
+</div><!-- <button type="button" onclick="window.close();" class="closeWindow"><span class="hidden">창 닫기</span></button> -->
+</div>
+
+<div class="loading" id="loadingDiv" style="display:none;">
+	<div class="set">
+		<i></i>
+		<p>
+			<strong>데이터를 불러오고 있습니다.</strong>
+			잠시만 기다려 주시기 바랍니다.
+		</p>
+	</div>
+</div>
+<script src="/static/jslibrary/iepicturefill.js"></script>
+<script src="/static/fss/js/common.js"></script>
+<script src="/static/fss/js/fss.js"></script>
+<script>
+	if(document.title=='') document.title = $('h1:first').text() + ' - 금융감독원'
+	$(function () {
+		try {
+			// e금융민원센터처리
+			if($(window.parent.document).find('#fss_frame').length > 0){
+				var parent = window.parent.document;
+				var h = $('body').height()
+				$(parent).find('#fss_frame').height($('body').height()).attr('style','height:'+h+'px;width: 750px;transform: translateX(-55px) scale(0.9066666666666667);transform-origin: top;')
+			}
+		} catch (error) {
+			$('.popwrap').css('overflow','auto')
+		}
+	})
+</script>
+</body>
+</html>
