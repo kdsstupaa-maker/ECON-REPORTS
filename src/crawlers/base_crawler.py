@@ -14,13 +14,14 @@ class BaseCrawler(ABC):
         """
         pass
 
-    def download_pdf(self, url, folder_name, filename):
+    def download_pdf(self, url, folder_name, filename, session=None):
         target_dir = os.path.join(self.pdf_dir, folder_name)
         os.makedirs(target_dir, exist_ok=True)
         file_path = os.path.join(target_dir, filename)
 
         headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
-        response = requests.get(url, headers=headers, stream=True, timeout=30)
+        req_client = session if session else requests
+        response = req_client.get(url, headers=headers, stream=True, timeout=30, verify=False)
         response.raise_for_status()
 
         with open(file_path, "wb") as f:

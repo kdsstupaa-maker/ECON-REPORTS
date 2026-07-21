@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#001e5b">
+<meta name="title" content="KCIF 국제금융센터">
+<meta name="keywords" content="KCIF 국제금융센터">
+<meta name="language" content="kr">
+<link rel="shortcut icon" type="image/x-icon"
+	href="/res/img/favicon.ico">
+<link rel="apple-touch-icon-precomposed" sizes="114x114"
+	href="/res/img/favicon.png">
+<link rel="stylesheet" href="/res/font/font.css">
+<link rel="stylesheet" href="/res/css/style.css">
+<link rel="stylesheet" href="/res/css/mypage.css">
+<link rel="stylesheet" href="/res/lib/billboard.css">
+
+<meta name="title"
+			content="KCIF 국제금융센터 - 보고서 모음 - 분석보고서">
+	<meta name="description" content="국제금융시장의 변화에 대한 상세 분석자료 보고서 모음 서비스">
+	<meta property="og:type" content="website">
+<meta property="og:image" content="/res/img/OG1.jpg">
+<meta property="og:title"
+			content="KCIF 국제금융센터 - 보고서 모음 - 분석보고서">
+	<meta property="og:description" content="국제금융시장의 변화에 대한 상세 분석자료 보고서 모음 서비스">
+	<meta property="og:url" content="https://www.kcif.or.kr">
+<!-- <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet"> -->
+<script type="text/javascript" src="/res/lib/jQuery.v2.2.4.js"></script>
+<script type="text/javascript" src="/res/lib/jQuery.easing.js"></script>
+<script type="text/javascript" src="/res/lib/jQuery.slick.js"></script>
+<script type="text/javascript" src="/res/lib/jquery-ui.js"></script>
+
+<script type="text/javascript" src="/res/lib/d3.v6.min.js"></script>
+<script type="text/javascript" src="/res/lib/billboard.min.js"></script>
+<script type="text/javascript" src="/res/js/kcif_chart.js"></script>
+
+
+<script type="text/javascript" src="/res/js/kcif_indicators.js"></script>
+
+
+<script type="text/javascript" src="/res/js/kcif_main.js"></script>
+<script type="text/javascript" src="/res/js/kcif_item.js"></script>
+
+
+<script type="text/javascript" src="/res/js/kcif_common.js"></script>
+<script type="text/javascript" src="/res/sysMngr/dev_js/cookie.js"></script>
+
+<script async
+	src="https://www.googletagmanager.com/gtag/js?id=G-FGDH2DGS0E"></script>
+<script>
+	(function(w, d, s, l, i) {
+		w[l] = w[l] || [];
+		w[l].push({
+			'gtm.start' : new Date().getTime(),
+			event : 'gtm.js'
+		});
+		var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l='
+				+ l
+				: '';
+		j.async = true;
+		j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+		f.parentNode.insertBefore(j, f);
+	})(window, document, 'script', 'dataLayer', 'GTM-MRT4QHL');
+
+	window.dataLayer = window.dataLayer || [];
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+	gtag('js', new Date());
+
+	gtag('config', 'G-FGDH2DGS0E');
+	
+</script>
+<script type="application/ld+json">
+	{
+		 "@context": "http://schema.org",
+		 "@type": "Organization",
+		 "name": "KCIF 국제금융센터",
+		 "url": "https://www.kcif.or.kr/",
+		 "sameAs": [
+		   "https://www.youtube.com/@user-hs5iq8lc7c"
+		 ]
+	}
+</script><title>KCIF 국제금융센터 - 분석보고서</title>
+	<script type="text/javascript">
+		var msg = '';
+		var menu_cd = '009001';
+		var pe = '';
+		$(function(){
+			if(msg != "") alert(msg);
+			
+			$("#searchForm input").keypress(function (e) {
+		    	if (e.which == 13)	search();
+			});
+		});
+		
+		function search(){
+			$("#hidden_pg").val("1");
+			$("#searchForm").submit();
+		}
+		
+		function pageFunction(pageNo){
+			$("#hidden_pg").val(pageNo);
+			$("#searchForm").submit();
+		}
+		
+	</script>
+</head>
+<body>
+<noscript>
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRT4QHL"
+height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<header>
+    <div class="container">
+        <div class="login_wrap">        		
+        
+        	<a href="/webUser/login">LOGIN</a>
+        		<a href="/etc/infromation">고객지원</a>
+            	<a href="/eng">ENG</a>
+            <button type="button" class="search" onclick="kcifFn.headerSearchBtn(this,1)">검색</button>                       
+            <div class="world_search world_search_hide">
+                <div class="world_search_wrap">
+                    <h1 class="logo"><a href="/"><img src="/res/img/main_logo.png" alt="kcif 국제금융센터"></a></h1>
+                    <div class="search_wrap">                    
+                        <p>SEARCH</p>
+                        <label><input type="text" id="sval1" name="sval1" placeholder="검색어를 입력하세요"><button type="button" class="search" onclick="searchAll('sval1');">자료 검색</button></label>
+                        <button type="button" class="close" onclick="kcifFn.headerSearchBtn(this,0)">검색창 닫기</button>                    
+                    </div>
+                </div>
+            </div>
+                        
+        </div>
+        <div class="nav_wrap nav_kr">
+            <h1 class="logo"><a href="/"><img src="/res/img/main_logo.png" alt="kcif 국제금융센터"></a></h1>
+            <div class="menu">
+                <nav>
+                    <ul class="gnb_wrap">
+                    	<li>
+			                            <a href="/annual/reportList">정기보고서</a>
+			                            <div class="gnb_downslide ">
+			                                <div class="guide">
+			                                    <div class="tit_wrap">
+			                                        <h2>정기보고서</h2>
+			                                        <p>Periodicals</p>
+			                                    </div>
+			                                    <div class="menu_each_wrap">
+													<div class="menu_each">
+															<div class="item"><a href="/annual/reportList">전체보고서</a></div>
+																	<div class="item"><a href="/annual/newsflashList">국제금융속보</a></div>
+																	<div class="item"><a href="/annual/weeklyList">주간보고서</a></div>
+																	<div class="item"><a href="/annual/monthlyList">월간보고서</a></div>
+																	<div class="item"><a href="/annual/dailyList">특별일보</a></div>
+																	<div class="item"><a href="/annual/videoList">영상보고서</a></div>
+																	</div>
+														</div>
+</div>
+			                            </div>
+			                        </li>
+		                    	<li>
+			                            <a href="/finance/financeList">국제금융</a>
+			                            <div class="gnb_downslide finance">
+			                                <div class="guide">
+			                                    <div class="tit_wrap">
+			                                        <h2>국제금융</h2>
+			                                        <p>International Finance</p>
+			                                    </div>
+			                                    <div class="menu_each_wrap">
+													<div class="menu_each">
+															<div class="item"><a href="/finance/financeList">전체보고서</a></div>
+																	<div class="item"><a href="/finance/forexList">외환</a></div>
+																	<div class="item"><a href="/finance/bondList">채권</a></div>
+																	<div class="item"><a href="/finance/stockList">주식</a></div>
+																	<div class="item"><a href="/finance/capitalList">자본유출입</a></div>
+																	<div class="item"><a href="/finance/materialsList">원자재</a></div>
+																	<div class="item"><a href="/finance/bankList">은행</a></div>
+																	<div class="item"><a href="/finance/etcList">기타</a></div>
+																	</div>
+														</div>
+</div>
+			                            </div>
+			                        </li>
+		                    	<li>
+			                            <a href="/economy/economyList">세계경제</a>
+			                            <div class="gnb_downslide economy">
+			                                <div class="guide">
+			                                    <div class="tit_wrap">
+			                                        <h2>세계경제</h2>
+			                                        <p>Global Economy</p>
+			                                    </div>
+			                                    <div class="menu_each_wrap">
+													<div class="menu_each">
+															<div class="item"><a href="/economy/economyList">전체보고서</a></div>
+																	<div class="item"><a href="/economy/america">미국</a></div>
+																	<div class="item"><a href="/economy/china">중국</a></div>
+																	<div class="item"><a href="/economy/europe">유럽</a></div>
+																	<div class="item"><a href="/economy/japan">일본</a></div>
+																	<div class="item"><a href="/economy/emerging">신흥국</a></div>
+																	<div class="item"><a href="/economy/global">글로벌</a></div>
+																	<div class="item"><a href="/economy/overseas">해외시각</a></div>
+																	</div>
+														</div>
+</div>
+			                            </div>
+			                        </li>
+		                    	<li>
+			                            <a href="/chart/exchangeList">지표ㆍ자료</a>
+			                            <div class="gnb_downslide chart">
+			                                <div class="guide">
+			                                    <div class="tit_wrap">
+			                                        <h2>지표ㆍ자료</h2>
+			                                        <p>IndexㆍData</p>
+			                                    </div>
+			                                    <div class="menu_each_wrap">
+													<div class="menu_each depth">
+																<div class="item">
+																				<a href="/chart/exchangeList">금융지표</a>
+																			<ul class="menu_each">
+																					<li><a href="/chart/exchangeList">환율</a></li>
+																						<li><a href="/chart/stockList">주가</a></li>
+																						<li><a href="/chart/intrList">금리</a></li>
+																						<li><a href="/chart/commList">원자재</a></li>
+																						<li><a href="/chart/frgnExchRsrvList">외환보유액</a></li>
+																						<li><a href="/chart/majorFinance">주요금융지표</a></li>
+																						<li><a href="/chart/financeList">금융지표전망</a></li>
+																						</ul>
+																			</div>
+<!-- 																		<div class="item"><a href="javascript:;">오시는 길</a></div> -->
+																	<div class="item">
+																				<a href="/chart/ecnmcIndct?ct=AM">경제지표</a>
+																			<ul class="menu_each">
+																					<li><a href="/chart/ecnmcIndct?ct=AM">미국</a></li>
+																						<li><a href="/chart/ecnmcIndct?ct=CN">중국</a></li>
+																						<li><a href="/chart/ecnmcIndct?ct=EU">유럽</a></li>
+																						<li><a href="/chart/ecnmcIndct?ct=JP">일본</a></li>
+																						<li><a href="/chart/ecnmcIndct?ct=EM">신흥국</a></li>
+																						<li><a href="/chart/ecnmcIndct?ct=KR">한국</a></li>
+																						<li><a href="/chart/majorEconomy">주요경제지표</a></li>
+																						<li><a href="/chart/economyList">경제지표전망</a></li>
+																						</ul>
+																			</div>
+<!-- 																		<div class="item"><a href="javascript:;">오시는 길</a></div> -->
+																	</div>
+														</div>
+</div>
+			                            </div>
+			                        </li>
+		                    	<li>
+			                            <a href="/center/greetings">센터소개</a>
+			                            <div class="gnb_downslide center">
+			                                <div class="guide">
+			                                    <div class="tit_wrap">
+			                                        <h2>센터소개</h2>
+			                                        <p>About KCIF</p>
+			                                    </div>
+			                                    <div class="menu_each_wrap">
+													<div class="menu_each depth">
+																<div class="item">
+																				<a href="/center/greetings">센터안내</a>
+																			<ul class="menu_each">
+																					<li><a href="/center/greetings">인사말</a></li>
+																						<li><a href="/center/centerNews">센터 동정</a></li>
+																						<li><a href="/center/history">연혁</a></li>
+																						<li><a href="/center/group">조직ㆍ직원</a></li>
+																						<li><a href="/center/purpose">설립목적ㆍ기능</a></li>
+																						<li><a href="/center/network">KCIF 네트워크</a></li>
+																						<li><a href="/center/ledger">역대원장</a></li>
+																						</ul>
+																			</div>
+<!-- 																		<div class="item"><a href="javascript:;">오시는 길</a></div> -->
+																	<div class="item">
+																				<a href="/center/noticeList">미디어</a>
+																			<ul class="menu_each">
+																					<li><a href="/center/noticeList">공지사항</a></li>
+																						<li><a href="/center/pressList">보도자료</a></li>
+																						<li><a href="/center/contributionList">기고ㆍ강연</a></li>
+																						<li><a href="/center/seminarList">행사ㆍ세미나</a></li>
+																						</ul>
+																			</div>
+<!-- 																		<div class="item"><a href="javascript:;">오시는 길</a></div> -->
+																	<div class="item">
+																				<a href="/center/contact">오시는 길</a>
+																			</div>
+<!-- 																		<div class="item"><a href="javascript:;">오시는 길</a></div> -->
+																	</div>
+														</div>
+</div>
+			                            </div>
+			                        </li>
+		                    	</ul>
+                </nav>
+                <button type="button" class="sitemap_btn" onclick="kcifFn.siteMenuOpen('#siteMap')">햄버거버튼</button>
+            </div>
+        </div>
+        <div class="mo_wrap">
+            <h1 class="logo"><a href="/"><img src="../res/img/main_logo.png" alt="kcif 국제금융센터"></a></h1>
+            <div class="menu">
+                <button type="button" class="search" onclick="kcifFn.headerSearchBtn(this,1)">검색</button>
+                <div class="world_search world_search_hide">
+                    <div class="world_search_wrap">
+                        <h1 class="logo"><a href="/"><img src="../res/img/main_logo.png" alt="kcif 국제금융센터"></a></h1>
+                        <div class="search_wrap">
+                            <p>SEARCH</p>
+                            <label><input type="text" name="sval2" id="sval2"  placeholder="검색어를 입력하세요"><button type="button" class="search" onclick="searchAll('sval2');">자료 검색</button></label>
+                            <button type="button" class="close" onclick="kcifFn.headerSearchBtn(this,0)">검색창 닫기</button>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="sitemap_btn" onclick="kcifFn.siteMenuOpen('#siteMapMo')">햄버거버튼</button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+	function logout_inc_user(name){
+		var result = window.confirm(name + "님 로그아웃 하시겠습니까?");
+		if(result){
+			location.href = "/webUser/login/logout";
+		}
+	}    
+    </script>
+    <!-- 사이트맵 -->
+ <div id="siteMap" class="sitemap">
+    <div class="guide">
+        <div class="sitemap_top">
+            <h1><a href="/"><img src="../res/img/main_logo.png" alt="kcif 국제금융센터"></a></h1>
+            <h2>SITEMAP</h2>
+            <button type="button" class="btn_close" onclick="kcifFn.siteMenuClose('#siteMap')">메뉴 닫기</button>
+        </div>
+        <div class="sitemap_con">
+        	<div class="depth row_two">
+			                <h5><a href="javascript:;">정기보고서</a></h5>
+			                <ul class="menu_each">
+			                	<li><a href="/annual/reportList">전체보고서</a></li>
+				                    		<li><a href="/annual/newsflashList">국제금융속보</a></li>
+				                    		<li><a href="/annual/weeklyList">주간보고서</a></li>
+				                    		<li><a href="/annual/monthlyList">월간보고서</a></li>
+				                    		<li><a href="/annual/dailyList">특별일보</a></li>
+				                    		<li><a href="/annual/videoList">영상보고서</a></li>
+				                    		</ul>
+			            </div>
+		            <div class="depth row_two">
+			                <h5><a href="javascript:;">국제금융</a></h5>
+			                <ul class="menu_each">
+			                	<li><a href="/finance/financeList">전체보고서</a></li>
+				                    		<li><a href="/finance/forexList">외환</a></li>
+				                    		<li><a href="/finance/bondList">채권</a></li>
+				                    		<li><a href="/finance/stockList">주식</a></li>
+				                    		<li><a href="/finance/capitalList">자본유출입</a></li>
+				                    		<li><a href="/finance/materialsList">원자재</a></li>
+				                    		<li><a href="/finance/bankList">은행</a></li>
+				                    		<li><a href="/finance/etcList">기타</a></li>
+				                    		</ul>
+			            </div>
+		            <div class="depth row_two">
+			                <h5><a href="javascript:;">세계경제</a></h5>
+			                <ul class="menu_each">
+			                	<li><a href="/economy/economyList">전체보고서</a></li>
+				                    		<li><a href="/economy/america">미국</a></li>
+				                    		<li><a href="/economy/china">중국</a></li>
+				                    		<li><a href="/economy/europe">유럽</a></li>
+				                    		<li><a href="/economy/japan">일본</a></li>
+				                    		<li><a href="/economy/emerging">신흥국</a></li>
+				                    		<li><a href="/economy/global">글로벌</a></li>
+				                    		<li><a href="/economy/overseas">해외시각</a></li>
+				                    		</ul>
+			            </div>
+		            <div class="depth row_two">
+			                <h5><a href="javascript:;">지표ㆍ자료</a></h5>
+			                <ul class="menu_each">
+			                	<li>
+						                        	<a href="/chart/exchangeList">금융지표</a>
+						                        <ul>
+						                        		<li><a href="/chart/exchangeList">환율</a></li>
+								                            	<li><a href="/chart/stockList">주가</a></li>
+								                            	<li><a href="/chart/intrList">금리</a></li>
+								                            	<li><a href="/chart/commList">원자재</a></li>
+								                            	<li><a href="/chart/frgnExchRsrvList">외환보유액</a></li>
+								                            	<li><a href="/chart/majorFinance">주요금융지표</a></li>
+								                            	<li><a href="/chart/financeList">금융지표전망</a></li>
+								                            	</ul>
+						                    </li>
+				                       	<li>
+						                        	<a href="/chart/ecnmcIndct?ct=AM">경제지표</a>
+						                        <ul>
+						                        		<li><a href="/chart/ecnmcIndct?ct=AM">미국</a></li>
+								                            	<li><a href="/chart/ecnmcIndct?ct=CN">중국</a></li>
+								                            	<li><a href="/chart/ecnmcIndct?ct=EU">유럽</a></li>
+								                            	<li><a href="/chart/ecnmcIndct?ct=JP">일본</a></li>
+								                            	<li><a href="/chart/ecnmcIndct?ct=EM">신흥국</a></li>
+								                            	<li><a href="/chart/ecnmcIndct?ct=KR">한국</a></li>
+								                            	<li><a href="/chart/majorEconomy">주요경제지표</a></li>
+								                            	<li><a href="/chart/economyList">경제지표전망</a></li>
+								                            	</ul>
+						                    </li>
+				                       	</ul>
+			            </div>
+			    	<div class="depth row_two">
+			                <h5><a href="javascript:;">센터소개</a></h5>
+			                <ul class="menu_each">
+			                	<li>
+						                        	<a href="/center/greetings">센터안내</a>
+						                        <ul>
+						                        		<li><a href="/center/greetings">인사말</a></li>
+								                            	<li><a href="/center/centerNews">센터 동정</a></li>
+								                            	<li><a href="/center/history">연혁</a></li>
+								                            	<li><a href="/center/group">조직ㆍ직원</a></li>
+								                            	<li><a href="/center/purpose">설립목적ㆍ기능</a></li>
+								                            	<li><a href="/center/network">KCIF 네트워크</a></li>
+								                            	<li><a href="/center/ledger">역대원장</a></li>
+								                            	</ul>
+						                    </li>
+				                       	<li>
+						                        	<a href="/center/noticeList">미디어</a>
+						                        <ul>
+						                        		<li><a href="/center/noticeList">공지사항</a></li>
+								                            	<li><a href="/center/pressList">보도자료</a></li>
+								                            	<li><a href="/center/contributionList">기고ㆍ강연</a></li>
+								                            	<li><a href="/center/seminarList">행사ㆍ세미나</a></li>
+								                            	</ul>
+						                    </li>
+				                       	<li>
+						                        	<a href="/center/contact">오시는 길</a>
+						                        <ul>
+						                        		</ul>
+						                    </li>
+				                       	</ul>
+			            </div>
+			    	<div class="depth">
+			            	<h5><a href="javascript:;">고객지원</a></h5>
+			                <ul class="menu_each">
+	                        	<li><a href="/etc/infromation">정보이용 안내</a></li>
+			                            	<li><a href="/etc/qnaList">Q&A</a></li>
+			                            	<li><a href="/etc/newsletter">뉴스레터 신청</a></li>
+			                            	<li><a href="/etc/forex">외환위기사례</a></li>
+			                            	</ul>
+			            </div>
+			    	<div class="depth">
+		                    <h5><a href="javascript:;">보고서 모음</a></h5>
+		                    <ul class="menu_each">
+		                    	<li><a href="/analysis/analysisList">분석보고서</a></li>
+			                        		<li><a href="/brief/briefList">이슈브리핑</a></li>
+			                        		<li><a href="/hotissue/hotissueMain">핫이슈</a></li>
+			                        		<li><a href="/report/reportList">전체 보고서 목록</a></li>
+			                        		</ul>
+		                </div>
+		            </div>
+    </div>
+</div><!-- sitemap -->
+  <div id="siteMapMo" class="site_map_mo">
+    <div class="site_map_mo_top">
+        <h1><a href="/"><img src="../res/img/main_logo.png" alt="KCIF 국제금융센터"></a></h1>
+        <div class="right">
+            <button type="button" class="search" onclick="kcifFn.headerSearchBtn(this,1)">검색</button>
+            <div class="world_search world_search_hide">
+                <div class="world_search_wrap">
+                    <h1 class="logo"><a href="/"><img src="../res/img/main_logo_w.png" alt="kcif 국제금융센터"></a></h1>
+                    <div class="search_wrap">
+                        <p>SEARCH</p>
+                        <label><input type="text" name="sval3" placeholder="검색어를 입력하세요"><button type="button" class="search" onclick="searchAll('sval3');">자료 검색</button></label>
+                        <button type="button" class="close" onclick="kcifFn.headerSearchBtn(this,0)">검색창 닫기</button>
+                    </div>
+                </div>
+            </div>
+            <a href="/eng" class="eng">ENG</a>
+            <button type="button" class="close" onclick="kcifFn.siteMenuClose('#siteMapMo')">닫기</button>
+        </div>
+    </div>
+    <div class="site_map_mo_mid">
+        <div class="center_guide">
+            <!-- 각 메뉴에 뎁스에 맞게 on 처리 해주세요 -->
+            <div class="site_area ">
+			                <h5><button type="button" onclick="kcifFn.itemOnOff(this,3)" class="">정기보고서</button></h5>
+			                <div class="menu_wrap no_depth">
+			                    <ul class="depth_2">
+			                    	<li><a href="/annual/reportList" class="">전체보고서</a></li>
+			                        		<li><a href="/annual/newsflashList" class="">국제금융속보</a></li>
+			                        		<li><a href="/annual/weeklyList" class="">주간보고서</a></li>
+			                        		<li><a href="/annual/monthlyList" class="">월간보고서</a></li>
+			                        		<li><a href="/annual/dailyList" class="">특별일보</a></li>
+			                        		<li><a href="/annual/videoList" class="">영상보고서</a></li>
+			                        		</ul>
+			                </div>
+			            </div>
+		            <div class="site_area ">
+			                <h5><button type="button" onclick="kcifFn.itemOnOff(this,3)" class="">국제금융</button></h5>
+			                <div class="menu_wrap no_depth">
+			                    <ul class="depth_2">
+			                    	<li><a href="/finance/financeList" class="">전체보고서</a></li>
+			                        		<li><a href="/finance/forexList" class="">외환</a></li>
+			                        		<li><a href="/finance/bondList" class="">채권</a></li>
+			                        		<li><a href="/finance/stockList" class="">주식</a></li>
+			                        		<li><a href="/finance/capitalList" class="">자본유출입</a></li>
+			                        		<li><a href="/finance/materialsList" class="">원자재</a></li>
+			                        		<li><a href="/finance/bankList" class="">은행</a></li>
+			                        		<li><a href="/finance/etcList" class="">기타</a></li>
+			                        		</ul>
+			                </div>
+			            </div>
+		            <div class="site_area ">
+			                <h5><button type="button" onclick="kcifFn.itemOnOff(this,3)" class="">세계경제</button></h5>
+			                <div class="menu_wrap no_depth">
+			                    <ul class="depth_2">
+			                    	<li><a href="/economy/economyList" class="">전체보고서</a></li>
+			                        		<li><a href="/economy/america" class="">미국</a></li>
+			                        		<li><a href="/economy/china" class="">중국</a></li>
+			                        		<li><a href="/economy/europe" class="">유럽</a></li>
+			                        		<li><a href="/economy/japan" class="">일본</a></li>
+			                        		<li><a href="/economy/emerging" class="">신흥국</a></li>
+			                        		<li><a href="/economy/global" class="">글로벌</a></li>
+			                        		<li><a href="/economy/overseas" class="">해외시각</a></li>
+			                        		</ul>
+			                </div>
+			            </div>
+		            <div class="site_area ">
+			                <h5><button type="button" onclick="kcifFn.itemOnOff(this,3)" class="">지표ㆍ자료</button></h5>
+			                <div class="menu_wrap">
+			                    <ul class="depth_2">
+			                    	<li>
+						                            <button type="button" onclick="kcifFn.itemOnOff(this,2)" class="">금융지표</button>
+						                            <ul class="depth_3">
+						                                <li><a href="/chart/exchangeList">환율</a></li>
+						                                		<li><a href="/chart/stockList">주가</a></li>
+						                                		<li><a href="/chart/intrList">금리</a></li>
+						                                		<li><a href="/chart/commList">원자재</a></li>
+						                                		<li><a href="/chart/frgnExchRsrvList">외환보유액</a></li>
+						                                		<li><a href="/chart/majorFinance">주요금융지표</a></li>
+						                                		<li><a href="/chart/financeList">금융지표전망</a></li>
+						                                		</ul>
+						                        </li>
+				                        	<li>
+						                            <button type="button" onclick="kcifFn.itemOnOff(this,2)" class="">경제지표</button>
+						                            <ul class="depth_3">
+						                                <li><a href="/chart/ecnmcIndct?ct=AM">미국</a></li>
+						                                		<li><a href="/chart/ecnmcIndct?ct=CN">중국</a></li>
+						                                		<li><a href="/chart/ecnmcIndct?ct=EU">유럽</a></li>
+						                                		<li><a href="/chart/ecnmcIndct?ct=JP">일본</a></li>
+						                                		<li><a href="/chart/ecnmcIndct?ct=EM">신흥국</a></li>
+						                                		<li><a href="/chart/ecnmcIndct?ct=KR">한국</a></li>
+						                                		<li><a href="/chart/majorEconomy">주요경제지표</a></li>
+						                                		<li><a href="/chart/economyList">경제지표전망</a></li>
+						                                		</ul>
+						                        </li>
+				                        	</ul>
+			                </div>
+			            </div>
+	            	<div class="site_area ">
+			                <h5><button type="button" onclick="kcifFn.itemOnOff(this,3)" class="">센터소개</button></h5>
+			                <div class="menu_wrap">
+			                    <ul class="depth_2">
+			                    	<li>
+						                            <button type="button" onclick="kcifFn.itemOnOff(this,2)" class="">센터안내</button>
+						                            <ul class="depth_3">
+						                                <li><a href="/center/greetings">인사말</a></li>
+						                                		<li><a href="/center/centerNews">센터 동정</a></li>
+						                                		<li><a href="/center/history">연혁</a></li>
+						                                		<li><a href="/center/group">조직ㆍ직원</a></li>
+						                                		<li><a href="/center/purpose">설립목적ㆍ기능</a></li>
+						                                		<li><a href="/center/network">KCIF 네트워크</a></li>
+						                                		<li><a href="/center/ledger">역대원장</a></li>
+						                                		</ul>
+						                        </li>
+				                        	<li>
+						                            <button type="button" onclick="kcifFn.itemOnOff(this,2)" class="">미디어</button>
+						                            <ul class="depth_3">
+						                                <li><a href="/center/noticeList">공지사항</a></li>
+						                                		<li><a href="/center/pressList">보도자료</a></li>
+						                                		<li><a href="/center/contributionList">기고ㆍ강연</a></li>
+						                                		<li><a href="/center/seminarList">행사ㆍ세미나</a></li>
+						                                		</ul>
+						                        </li>
+				                        	<li><a href="/center/contact" class="">오시는 길</a></li>
+				                        	</ul>
+			                </div>
+			            </div>
+	            	<div class="mo_login_wrap ">
+                <a href="/webUser/login" class="login btn">LOGIN</a>
+	        		</div>
+            <div class="site_area info_btn ">
+            	<h5><button type="button" class="btn " onclick="kcifFn.itemOnOff(this,3)">고객지원</button></h5>
+		                <div class="menu_wrap no_depth">
+		                    <ul class="depth_2">
+		                    	<li><a href="/etc/infromation" class="">정보이용 안내</a></li>
+		                        		<li><a href="/etc/qnaList" class="">Q&A</a></li>
+		                        		<li><a href="/etc/newsletter" class="">뉴스레터 신청</a></li>
+		                        		<li><a href="/etc/forex" class="">외환위기사례</a></li>
+		                        		</ul>
+		                </div>
+	            	</div>
+        </div>
+    </div>
+</div></header><section id="contents" class="hidden">
+    <div class="container">
+        <div class="page_top">
+            <h2>분석보고서<em>Analysis Report</em></h2>
+        </div>
+        <div class="linemap_guide-box">
+    <div class="comm_linemap">
+	        <a href="/" class="home">HOME</a>
+        <div class="depth mo">
+	        	<button type="button" onclick="kcifFn.lineMapMenu(this)">분석보고서</button>
+	            <ul>
+	                <li><a href="/analysis/analysisList" class="on">분석보고서</a></li>
+	                		<li><a href="/brief/briefList" class="">이슈브리핑</a></li>
+	                		<li><a href="/hotissue/hotissueMain" class="">핫이슈</a></li>
+	                		<li><a href="/report/reportList" class="">전체 보고서 목록</a></li>
+	                		</ul>
+	        </div>
+	        <div class="depth last">
+	        	<ul>
+	                </ul>
+	        </div>
+        <div class="sns_btn-box">
+<!-- 			<span><a href="javascript:;" class="f" onclick="share_facebook();">페이스북</a></span> -->
+            <span><a href="javascript:;" class="p">프린트</a></span>
+            <span><a href="javascript:;" class="u">URL 복사</a></span>
+            <span class="txt_control"><a href="javascript:;" class="b">크게보기</a></span>
+            <span class="txt_control"><a href="javascript:;" class="s">작게보기</a></span>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+function share_facebook(){
+	let url = window.location.href;
+	window.open('http://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url), 'facebooksharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=800,width=600');
+}
+</script><div class="page_wrap header_point">
+            <nav class="side_menu ">
+	<div class="tit">
+	        <h3>보고서 모음</h3>
+	    </div>
+    <ul>
+    	<li><a href="/analysis/analysisList" class="on" onclick="kcifFn.lnbClick(this)">분석보고서</a></li>
+		        <li><a href="/brief/briefList" class="" onclick="kcifFn.lnbClick(this)">이슈브리핑</a></li>
+		        <li><a href="/hotissue/hotissueMain" class="" onclick="kcifFn.lnbClick(this)">핫이슈</a></li>
+		        <li><a href="/report/reportList" class="" onclick="kcifFn.lnbClick(this)">전체 보고서 목록</a></li>
+		        </ul>
+</nav>
+<!-- 모바일 -->
+<nav class="side_menu_mo">
+    <div class="tit" onclick="kcifFn.reportSideMenu(this)">
+        <h3>분석보고서</h3>
+    </div>
+    <ul>
+      	<li><a href="/analysis/analysisList" onclick="kcifFn.lnbClick(this)" class="on">분석보고서</a></li>
+           		<li><a href="/brief/briefList" onclick="kcifFn.lnbClick(this)" class="">이슈브리핑</a></li>
+           		<li><a href="/hotissue/hotissueMain" onclick="kcifFn.lnbClick(this)" class="">핫이슈</a></li>
+           		<li><a href="/report/reportList" onclick="kcifFn.lnbClick(this)" class="">전체 보고서 목록</a></li>
+           		</ul>
+</nav><div class="page_list_wrap">
+            	<div class="page_list_top">
+	               <h4>분석보고서</h4>
+	               <ul>
+<!-- 	                   <li><a href="javascript:share_facebook();" class="f">페이스북</a></li> -->
+	                   <li><button type="button" class="u" onclick="clip();">URL 복사</button></li>
+	               </ul>
+	           	</div>
+                <div class="page_search">
+                    <p><span>전체</span>1,082 건</p>
+                    <form id="searchForm" name="searchForm" action="./analysisList">
+					<input type="hidden" id="hidden_pp" name="pp" value="10">
+					<input type="hidden" id="hidden_pg" name="pg" value="1">
+	                    <div class="search_guide">
+	                        <span class="comm_select">
+	                            <label for="reportSelect">전체</label>
+	                            <select id="reportSelect" name="skey">
+	                                <option value="A" >전체</option>
+									<option value="B" >제목</option>
+									<option value="C" >내용</option>
+	                            </select>
+	                        </span>
+	                        <label class="search_wrap">
+	                        	<input type="text" id="sval" name="sval" placeholder="검색어를 입력해주세요" title="검색어를 입력해주세요" value="">
+	                        	<button type="button" onclick="search();">검색</button>
+	                       	</label>
+	                    </div>
+	                </form>
+                </div>
+                <ul class="page_list">
+                    <li>
+		                        <h5 class="tit_bar">은행</h5>
+		                        <div class="tit_box">
+		                            <a href="/finance/financeView?rpt_no=37268&mn=002007&skey=&sval=&pg=1&pp=10">
+		                                <p class="lock">글로벌 금융권의 네트워크 보안 규제 및 전략 동향</p>
+		                            </a>
+		                            <p class="views">조회수 <span>75</span></p>
+		                        </div>
+		                        <div class="txt_bot">
+		                            <div class="txt_wrap">
+		                                <div class="tag_wrap">
+		                                	<a href="javascript:;">#망분리</a>
+			                            		<a href="javascript:;">#AI</a>
+			                            		<a href="javascript:;">#제로 트러스트</a>
+			                            		</div>
+		                                <span>황원정,이승은</span>
+	                          			<span>2026.07.06</span>
+		                            </div>
+		                            <div class="download">
+		                                <div class="btn_wrap">
+			                                	<button type="button" class="btn preview" onclick="filePreview('q8sKw%2FP2FmzcSf3mJxv5W9i0%2FhelkPee1oZvu7%2BhtXY%3D','9Per2NXsH6Rpb2A%2FnSXyUy51yLrSlqkUe9bEWpFvsa5DJ%2FGHFWn3C4pYDhqsZQbZ','pdf','260706-글로벌 금융권 네트워크 보안 규제.pdf','AHr4m6WIZWhVvoa7WmPE8w%3D%3D');" kcif-title="글로벌 금융권의 네트워크 보안 규제 및 전략 동향" rpt_no="37268">미리보기</button><div class="file_bubble">
+			                                        <div class="top">
+			                                            <strong>미리보기</strong>
+			                                        </div>
+			                                        <ul id="">
+			                                        		<li><a href="javascript:;" onclick="filePreview('q8sKw%2FP2FmzcSf3mJxv5W9i0%2FhelkPee1oZvu7%2BhtXY%3D','9Per2NXsH6Rpb2A%2FnSXyUy51yLrSlqkUe9bEWpFvsa5DJ%2FGHFWn3C4pYDhqsZQbZ','pdf','260706-글로벌 금융권 네트워크 보안 규제.pdf','AHr4m6WIZWhVvoa7WmPE8w%3D%3D');" title="260706-글로벌 금융권 네트워크 보안 규제.pdf" kcif-title="글로벌 금융권의 네트워크 보안 규제 및 전략 동향" rpt_no="37268">260706-글로벌 금융권 네트워크 보안 규제.pdf</a></li></ul>
+			                                    </div>
+			                                </div>
+		                                <div class="btn_wrap">
+		                                	<button type="button" class="btn down" onclick="reportdownload('AHr4m6WIZWhVvoa7WmPE8w%3D%3D');" kcif-title="글로벌 금융권의 네트워크 보안 규제 및 전략 동향" rpt_no="37268">다운로드</button>
+					                                    <div class="file_bubble">
+		                                        <div class="top">
+		                                            <strong>다운로드</strong>
+		                                        </div>
+		                                        <ul id="">
+		                                        	<li><a href="javascript:;" onclick="reportdownload('AHr4m6WIZWhVvoa7WmPE8w%3D%3D');" title="260706-글로벌 금융권 네트워크 보안 규제.pdf" kcif-title="글로벌 금융권의 네트워크 보안 규제 및 전략 동향" rpt_no="37268">260706-글로벌 금융권 네트워크 보안 규제.pdf</a></li></ul>
+		                                    </div>
+		                                </div>
+	                                </div>
+		                        </div>
+		                    </li>
+                    	<li>
+		                        <h5 class="tit_bar">중국</h5>
+		                        <div class="tit_box">
+		                            <a href="/economy/economyView?rpt_no=37264&mn=003003&skey=&sval=&pg=1&pp=10">
+		                                <p class="lock">중국의 저금리 배경 및 파급영향</p>
+		                            </a>
+		                            <p class="views">조회수 <span>363</span></p>
+		                        </div>
+		                        <div class="txt_bot">
+		                            <div class="txt_wrap">
+		                                <div class="tag_wrap">
+		                                	<a href="javascript:;">#저금리</a>
+			                            		<a href="javascript:;">#성장둔화</a>
+			                            		<a href="javascript:;">#캐리트레이드</a>
+			                            		<a href="javascript:;">#자산관리상품</a>
+			                            		</div>
+		                                <span>김기봉</span>
+	                          			<span>2026.07.03</span>
+		                            </div>
+		                            <div class="download">
+		                                <div class="btn_wrap">
+			                                	<button type="button" class="btn preview" onclick="filePreview('q8sKw%2FP2FmzcSf3mJxv5WxTSbcwS3V7Kgj4CtXFRnzI%3D','tcs9K4%2BZOtHqmT2FLQvsMpabmxNTNBn9s8Tzhv2uTe9mTKI3GiuMOXa6bJsrZtqQ','pdf','260703-중국의 저금리 배경 및 파급영향.pdf','HOoaponwNiIncFfHAelaBg%3D%3D');" kcif-title="중국의 저금리 배경 및 파급영향" rpt_no="37264">미리보기</button><div class="file_bubble">
+			                                        <div class="top">
+			                                            <strong>미리보기</strong>
+			                                        </div>
+			                                        <ul id="">
+			                                        		<li><a href="javascript:;" onclick="filePreview('q8sKw%2FP2FmzcSf3mJxv5WxTSbcwS3V7Kgj4CtXFRnzI%3D','tcs9K4%2BZOtHqmT2FLQvsMpabmxNTNBn9s8Tzhv2uTe9mTKI3GiuMOXa6bJsrZtqQ','pdf','260703-중국의 저금리 배경 및 파급영향.pdf','HOoaponwNiIncFfHAelaBg%3D%3D');" title="260703-중국의 저금리 배경 및 파급영향.pdf" kcif-title="중국의 저금리 배경 및 파급영향" rpt_no="37264">260703-중국의 저금리 배경 및 파급영향.pdf</a></li></ul>
+			                                    </div>
+			                                </div>
+		                                <div class="btn_wrap">
+		                                	<button type="button" class="btn down" onclick="reportdownload('HOoaponwNiIncFfHAelaBg%3D%3D');" kcif-title="중국의 저금리 배경 및 파급영향" rpt_no="37264">다운로드</button>
+					                                    <div class="file_bubble">
+		                                        <div class="top">
+		                                            <strong>다운로드</strong>
+		                                        </div>
+		                                        <ul id="">
+		                                        	<li><a href="javascript:;" onclick="reportdownload('HOoaponwNiIncFfHAelaBg%3D%3D');" title="260703-중국의 저금리 배경 및 파급영향.pdf" kcif-title="중국의 저금리 배경 및 파급영향" rpt_no="37264">260703-중국의 저금리 배경 및 파급영향.pdf</a></li></ul>
+		                                    </div>
+		                                </div>
+	                                </div>
+		                        </div>
+		                    </li>
+                    	<li>
+		                        <h5 class="tit_bar">채권</h5>
+		                        <div class="tit_box">
+		                            <a href="/finance/financeView?rpt_no=37255&mn=002003&skey=&sval=&pg=1&pp=10">
+		                                <p class="">`26년 한국계 상반기 외화채권  발행시장 동향 및 향후 여건</p>
+		                            </a>
+		                            <p class="views">조회수 <span>451</span></p>
+		                        </div>
+		                        <div class="txt_bot">
+		                            <div class="txt_wrap">
+		                                <div class="tag_wrap">
+		                                	<a href="javascript:;">#외화채</a>
+			                            		<a href="javascript:;">#한국물</a>
+			                            		<a href="javascript:;">#발행</a>
+			                            		<a href="javascript:;">#반기보</a>
+			                            		</div>
+		                                <span>주혜원,김윤경</span>
+	                          			<span>2026.07.01</span>
+		                            </div>
+		                            <div class="download">
+		                                <div class="btn_wrap">
+			                                	<button type="button" class="btn preview" onclick="filePreview('q8sKw%2FP2FmzcSf3mJxv5W0%2F0khb4eH%2BhEag31xE58pU%3D','0Z9AZGMqPsJpLg%2FqVzu8o3Vhdr1VsyJvq6gtuOLAsBh2enVRo9cGePiPfOmV0Y4N','pdf','260701-한국물 반기보.pdf','PkfHqDKJZsJswos81i5cSQ%3D%3D');" kcif-title="`26년 한국계 상반기 외화채권  발행시장 동향 및 향후 여건" rpt_no="37255">미리보기</button><div class="file_bubble">
+			                                        <div class="top">
+			                                            <strong>미리보기</strong>
+			                                        </div>
+			                                        <ul id="">
+			                                        		<li><a href="javascript:;" onclick="filePreview('q8sKw%2FP2FmzcSf3mJxv5W0%2F0khb4eH%2BhEag31xE58pU%3D','0Z9AZGMqPsJpLg%2FqVzu8o3Vhdr1VsyJvq6gtuOLAsBh2enVRo9cGePiPfOmV0Y4N','pdf','260701-한국물 반기보.pdf','PkfHqDKJZsJswos81i5cSQ%3D%3D');" title="260701-한국물 반기보.pdf" kcif-title="`26년 한국계 상반기 외화채권  발행시장 동향 및 향후 여건" rpt_no="37255">260701-한국물 반기보.pdf</a></li></ul>
+			                                    </div>
+			                                </div>
+		                                <div class="btn_wrap">
+		                                	<button type="button" class="btn down" onclick="reportdownload('PkfHqDKJZsJswos81i5cSQ%3D%3D');" kcif-title="`26년 한국계 상반기 외화채권  발행시장 동향 및 향후 여건" rpt_no="37255">다운로드</button>
+					                                    <div class="file_bubble">
+		                                        <div class="top">
+		                                            <strong>다운로드</strong>
+		                                        </div>
+		                                        <ul id="">
+		                                        	<li><a href="javascript:;" onclick="reportdownload('PkfHqDKJZsJswos81i5cSQ%3D%3D');" title="260701-한국물 반기보.pdf" kcif-title="`26년 한국계 상반기 외화채권  발행시장 동향 및 향후 여건" rpt_no="37255">260701-한국물 반기보.pdf</a></li></ul>
+		                                    </div>
+		                                </div>
+	                                </div>
+		                        </div>
+		                    </li>
+                    	<li>
+		                        <h5 class="tit_bar">채권</h5>
+		                        <div class="tit_box">
+		                            <a href="/finance/financeView?rpt_no=37254&mn=002003&skey=&sval=&pg=1&pp=10">
+		                                <p class="">주요국 국채금리, 단기물 중심으로 상승 압력 확대</p>
+		                            </a>
+		                            <p class="views">조회수 <span>435</span></p>
+		                        </div>
+		                        <div class="txt_bot">
+		                            <div class="txt_wrap">
+		                                <div class="tag_wrap">
+		                                	<a href="javascript:;">#글로벌</a>
+			                            		<a href="javascript:;">#국채금리</a>
+			                            		<a href="javascript:;">#월간동향</a>
+			                            		</div>
+		                                <span>김선경,김윤경</span>
+	                          			<span>2026.07.01</span>
+		                            </div>
+		                            <div class="download">
+		                                <div class="btn_wrap">
+			                                	<button type="button" class="btn preview" onclick="filePreview('q8sKw%2FP2FmzcSf3mJxv5W5gwHdZVuMZwtLs5WXgeG1A%3D','Oxn4fYRDWF%2Bc2FvcHmNhRP1fvdmPkjo6xEFGIWkw5hwBaVXQ%2Fe%2Fe0o4eVMpo%2FOJ5','pdf','260701-주요국 국채금리 상승압력 확대.pdf','vT6S15l%2FAVjpaEx622cu9A%3D%3D');" kcif-title="주요국 국채금리, 단기물 중심으로 상승 압력 확대" rpt_no="37254">미리보기</button><div class="file_bubble">
+			                                        <div class="top">
+			                                            <strong>미리보기</strong>
+			                                        </div>
+			                                        <ul id="">
+			                                        		<li><a href="javascript:;" onclick="filePreview('q8sKw%2FP2FmzcSf3mJxv5W5gwHdZVuMZwtLs5WXgeG1A%3D','Oxn4fYRDWF%2Bc2FvcHmNhRP1fvdmPkjo6xEFGIWkw5hwBaVXQ%2Fe%2Fe0o4eVMpo%2FOJ5','pdf','260701-주요국 국채금리 상승압력 확대.pdf','vT6S15l%2FAVjpaEx622cu9A%3D%3D');" title="260701-주요국 국채금리 상승압력 확대.pdf" kcif-title="주요국 국채금리, 단기물 중심으로 상승 압력 확대" rpt_no="37254">260701-주요국 국채금리 상승압력 확대.pdf</a></li></ul>
+			                                    </div>
+			                                </div>
+		                                <div class="btn_wrap">
+		                                	<button type="button" class="btn down" onclick="reportdownload('vT6S15l%2FAVjpaEx622cu9A%3D%3D');" kcif-title="주요국 국채금리, 단기물 중심으로 상승 압력 확대" rpt_no="37254">다운로드</button>
+					                                    <div class="file_bubble">
+		                                        <div class="top">
+		                                            <strong>다운로드</strong>
+		                                        </div>
+		                                        <ul id="">
+		                                        	<li><a href="javascript:;" onclick="reportdownload('vT6S15l%2FAVjpaEx622cu9A%3D%3D');" title="260701-주요국 국채금리 상승압력 확대.pdf" kcif-title="주요국 국채금리, 단기물 중심으로 상승 압력 확대" rpt_no="37254">260701-주요국 국채금리 상승압력 확대.pdf</a></li></ul>
+		                                    </div>
+		                                </div>
+	                                </div>
+		                        </div>
+		                    </li>
+                    	<li>
+		                        <h5 class="tit_bar">은행</h5>
+		                        <div class="tit_box">
+		                            <a href="/finance/financeView?rpt_no=37241&mn=002007&skey=&sval=&pg=1&pp=10">
+		                                <p class="">글로벌 금융산업의 AI 도입 현황 및 성과</p>
+		                            </a>
+		                            <p class="views">조회수 <span>873</span></p>
+		                        </div>
+		                        <div class="txt_bot">
+		                            <div class="txt_wrap">
+		                                <div class="tag_wrap">
+		                                	<a href="javascript:;">#은행</a>
+			                            		<a href="javascript:;">#AI</a>
+			                            		<a href="javascript:;">#에이전트 AI</a>
+			                            		</div>
+		                                <span>이상원</span>
+	                          			<span>2026.06.26</span>
+		                            </div>
+		                            <div class="download">
+		                                <div class="btn_wrap">
+			                                	<button type="button" class="btn preview" onclick="filePreview('dNcgOBDfpvjUtlqDHLJg2NqItc1rLoGgddkxI0ZqBI8%3D','w5LdV79JgWhrDcZoolWfkGuujl0RHLu%2F84yh5%2F3Adx1YWp6a0DWq7BczwMIzMFW2','pdf','260626-금융권 AI 도입 현황 및 성과.pdf','YXJyhLja5JW9ThXlDvPNpA%3D%3D');" kcif-title="글로벌 금융산업의 AI 도입 현황 및 성과" rpt_no="37241">미리보기</button><div class="file_bubble">
+			                                        <div class="top">
+			                                            <strong>미리보기</strong>
+			                                        </div>
+			                                        <ul id="">
+			                                        		<li><a href="javascript:;" onclick="filePreview('dNcgOBDfpvjUtlqDHLJg2NqItc1rLoGgddkxI0ZqBI8%3D','w5LdV79JgWhrDcZoolWfkGuujl0RHLu%2F84yh5%2F3Adx1YWp6a0DWq7BczwMIzMFW2','pdf','260626-금융권 AI 도입 현황 및 성과.pdf','YXJyhLja5JW9ThXlDvPNpA%3D%3D');" title="260626-금융권 AI 도입 현황 및 성과.pdf" kcif-title="글로벌 금융산업의 AI 도입 현황 및 성과" rpt_no="37241">260626-금융권 AI 도입 현황 및 성과.pdf</a></li></ul>
+			                                    </div>
+			                                </div>
+		                                <div class="btn_wrap">
+		                                	<button type="button" class="btn down" onclick="reportdownload('YXJyhLja5JW9ThXlDvPNpA%3D%3D');" kcif-title="글로벌 금융산업의 AI 도입 현황 및 성과" rpt_no="37241">다운로드</button>
+					                                    <div class="file_bubble">
+		                                        <div class="top">
+		                                            <strong>다운로드</strong>
+		                                        </div>
+		                                        <ul id="">
+		                                        	<li><a href="javascript:;" onclick="reportdownload('YXJyhLja5JW9ThXlDvPNpA%3D%3D');" title="260626-금융권 AI 도입 현황 및 성과.pdf" kcif-title="글로벌 금융산업의 AI 도입 현황 및 성과" rpt_no="37241">260626-금융권 AI 도입 현황 및 성과.pdf</a></li></ul>
+		                                    </div>
+		                                </div>
+	                                </div>
+		                        </div>
+		                    </li>
+                    	<li>
+		                        <h5 class="tit_bar">신흥국</h5>
+		                        <div class="tit_box">
+		                            <a href="/economy/economyView?rpt_no=37219&mn=003006&skey=&sval=&pg=1&pp=10">
+		                                <p class="">최근 인도네시아, 필리핀의 정책금리 인상과 시사점</p>
+		                            </a>
+		                            <p class="views">조회수 <span>1000</span></p>
+		                        </div>
+		                        <div class="txt_bot">
+		                            <div class="txt_wrap">
+		                                <div class="tag_wrap">
+		                                	<a href="javascript:;">#인도네시아</a>
+			                            		<a href="javascript:;">#필리핀</a>
+			                            		</div>
+		                                <span>김미승,백진규</span>
+	                          			<span>2026.06.19</span>
+		                            </div>
+		                            <div class="download">
+		                                <div class="btn_wrap">
+			                                	<button type="button" class="btn preview" onclick="filePreview('dNcgOBDfpvjUtlqDHLJg2OQld6ZhskmetlUFknb49K8%3D','5AgJaS38WA975bL%2BJuV1eHOyrYePmbLONHXvMsTenUPCLByp6jVKjb368GhBfxFL','pdf','260619-인니, 필리핀의 정책금리 인상.pdf','uC83pkFU7mFvp7bb9wxFOQ%3D%3D');" kcif-title="최근 인도네시아, 필리핀의 정책금리 인상과 시사점" rpt_no="37219">미리보기</button><div class="file_bubble">
+			                                        <div class="top">
+			                                            <strong>미리보기</strong>
+			                                        </div>
+			                                        <ul id="">
+			                                        		<li><a href="javascript:;" onclick="filePreview('dNcgOBDfpvjUtlqDHLJg2OQld6ZhskmetlUFknb49K8%3D','5AgJaS38WA975bL%2BJuV1eHOyrYePmbLONHXvMsTenUPCLByp6jVKjb368GhBfxFL','pdf','260619-인니, 필리핀의 정책금리 인상.pdf','uC83pkFU7mFvp7bb9wxFOQ%3D%3D');" title="260619-인니, 필리핀의 정책금리 인상.pdf" kcif-title="최근 인도네시아, 필리핀의 정책금리 인상과 시사점" rpt_no="37219">260619-인니, 필리핀의 정책금리 인상.pdf</a></li></ul>
+			                                    </div>
+			                                </div>
+		                                <div class="btn_wrap">
+		                                	<button type="button" class="btn down" onclick="reportdownload('uC83pkFU7mFvp7bb9wxFOQ%3D%3D');" kcif-title="최근 인도네시아, 필리핀의 정책금리 인상과 시사점" rpt_no="37219">다운로드</button>
+					                                    <div class="file_bubble">
+		                                        <div class="top">
+		                                            <strong>다운로드</strong>
+		                                        </div>
+		                                        <ul id="">
+		                                        	<li><a href="javascript:;" onclick="reportdownload('uC83pkFU7mFvp7bb9wxFOQ%3D%3D');" title="260619-인니, 필리핀의 정책금리 인상.pdf" kcif-title="최근 인도네시아, 필리핀의 정책금리 인상과 시사점" rpt_no="37219">260619-인니, 필리핀의 정책금리 인상.pdf</a></li></ul>
+		                                    </div>
+		                                </div>
+	                                </div>
+		                        </div>
+		                    </li>
+                    	<li>
+		                        <h5 class="tit_bar">미국</h5>
+		                        <div class="tit_box">
+		                            <a href="/economy/economyView?rpt_no=37212&mn=003002&skey=&sval=&pg=1&pp=10">
+		                                <p class="">미국 연준 6월 FOMC 회의 결과 및 평가</p>
+		                            </a>
+		                            <p class="views">조회수 <span>2174</span></p>
+		                        </div>
+		                        <div class="txt_bot">
+		                            <div class="txt_wrap">
+		                                <div class="tag_wrap">
+		                                	</div>
+		                                <span>박미정,황유선,권혁우</span>
+	                          			<span>2026.06.18</span>
+		                            </div>
+		                            <div class="download">
+		                                <div class="btn_wrap">
+			                                	<button type="button" class="btn preview" onclick="filePreview('dNcgOBDfpvjUtlqDHLJg2CgLfdo%2FxhJ%2BqRFX7yP6QBg%3D','3i2E%2FyezcDJQ%2FtGMaQo8v4ovcIu4%2FrZFDUXy7xJ0VA9jmhDuq7nRUz6cmggB5YnE','pdf','260618_IA_미국 연준 6월 FOMC 회의 결과 및 평가.pdf','t7QUalZWKwn5W40Lz0etsw%3D%3D');" kcif-title="미국 연준 6월 FOMC 회의 결과 및 평가" rpt_no="37212">미리보기</button><div class="file_bubble">
+			                                        <div class="top">
+			                                            <strong>미리보기</strong>
+			                                        </div>
+			                                        <ul id="">
+			                                        		<li><a href="javascript:;" onclick="filePreview('dNcgOBDfpvjUtlqDHLJg2CgLfdo%2FxhJ%2BqRFX7yP6QBg%3D','3i2E%2FyezcDJQ%2FtGMaQo8v4ovcIu4%2FrZFDUXy7xJ0VA9jmhDuq7nRUz6cmggB5YnE','pdf','260618_IA_미국 연준 6월 FOMC 회의 결과 및 평가.pdf','t7QUalZWKwn5W40Lz0etsw%3D%3D');" title="260618_IA_미국 연준 6월 FOMC 회의 결과 및 평가.pdf" kcif-title="미국 연준 6월 FOMC 회의 결과 및 평가" rpt_no="37212">260618_IA_미국 연준 6월 FOMC 회의 결과 및 평가.pdf</a></li></ul>
+			                                    </div>
+			                                </div>
+		                                <div class="btn_wrap">
+		                                	<button type="button" class="btn down" onclick="reportdownload('t7QUalZWKwn5W40Lz0etsw%3D%3D');" kcif-title="미국 연준 6월 FOMC 회의 결과 및 평가" rpt_no="37212">다운로드</button>
+					                                    <div class="file_bubble">
+		                                        <div class="top">
+		                                            <strong>다운로드</strong>
+		                                        </div>
+		                                        <ul id="">
+		                                        	<li><a href="javascript:;" onclick="reportdownload('t7QUalZWKwn5W40Lz0etsw%3D%3D');" title="260618_IA_미국 연준 6월 FOMC 회의 결과 및 평가.pdf" kcif-title="미국 연준 6월 FOMC 회의 결과 및 평가" rpt_no="37212">260618_IA_미국 연준 6월 FOMC 회의 결과 및 평가.pdf</a></li></ul>
+		                                    </div>
+		                                </div>
+	                                </div>
+		                        </div>
+		                    </li>
+                    	<li>
+		                        <h5 class="tit_bar">미국</h5>
+		                        <div class="tit_box">
+		                            <a href="/economy/economyView?rpt_no=37184&mn=003002&skey=&sval=&pg=1&pp=10">
+		                                <p class="">미국 5월 소비자물가 동향 및 통화정책 영향 점검</p>
+		                            </a>
+		                            <p class="views">조회수 <span>1277</span></p>
+		                        </div>
+		                        <div class="txt_bot">
+		                            <div class="txt_wrap">
+		                                <div class="tag_wrap">
+		                                	<a href="javascript:;">#인플레이션</a>
+			                            		<a href="javascript:;">#공급충격</a>
+			                            		<a href="javascript:;">#중동전쟁</a>
+			                            		<a href="javascript:;">#관세전가</a>
+			                            		<a href="javascript:;">#인공지능</a>
+			                            		</div>
+		                                <span>황유선,권혁우</span>
+	                          			<span>2026.06.11</span>
+		                            </div>
+		                            <div class="download">
+		                                <div class="btn_wrap">
+			                                	<button type="button" class="btn preview" onclick="filePreview('dNcgOBDfpvjUtlqDHLJg2NrzxURTAKoTiXKkir6h1CM%3D','aDhjE%2Fj3d5NLpkizM75%2FqZSHBtjo2tvNj5sLRCIoXHyqM6a0%2FDddkMM5ukQfsNg8','pdf','260611-미 소비자물가 동향 및 통화정책.pdf','untJAIkiW2lssyHi2DE9ww%3D%3D');" kcif-title="미국 5월 소비자물가 동향 및 통화정책 영향 점검" rpt_no="37184">미리보기</button><div class="file_bubble">
+			                                        <div class="top">
+			                                            <strong>미리보기</strong>
+			                                        </div>
+			                                        <ul id="">
+			                                        		<li><a href="javascript:;" onclick="filePreview('dNcgOBDfpvjUtlqDHLJg2NrzxURTAKoTiXKkir6h1CM%3D','aDhjE%2Fj3d5NLpkizM75%2FqZSHBtjo2tvNj5sLRCIoXHyqM6a0%2FDddkMM5ukQfsNg8','pdf','260611-미 소비자물가 동향 및 통화정책.pdf','untJAIkiW2lssyHi2DE9ww%3D%3D');" title="260611-미 소비자물가 동향 및 통화정책.pdf" kcif-title="미국 5월 소비자물가 동향 및 통화정책 영향 점검" rpt_no="37184">260611-미 소비자물가 동향 및 통화정책.pdf</a></li></ul>
+			                                    </div>
+			                                </div>
+		                                <div class="btn_wrap">
+		                                	<button type="button" class="btn down" onclick="reportdownload('untJAIkiW2lssyHi2DE9ww%3D%3D');" kcif-title="미국 5월 소비자물가 동향 및 통화정책 영향 점검" rpt_no="37184">다운로드</button>
+					                                    <div class="file_bubble">
+		                                        <div class="top">
+		                                            <strong>다운로드</strong>
+		                                        </div>
+		                                        <ul id="">
+		                                        	<li><a href="javascript:;" onclick="reportdownload('untJAIkiW2lssyHi2DE9ww%3D%3D');" title="260611-미 소비자물가 동향 및 통화정책.pdf" kcif-title="미국 5월 소비자물가 동향 및 통화정책 영향 점검" rpt_no="37184">260611-미 소비자물가 동향 및 통화정책.pdf</a></li></ul>
+		                                    </div>
+		                                </div>
+	                                </div>
+		                        </div>
+		                    </li>
+                    	<li>
+		                        <h5 class="tit_bar">원자재</h5>
+		                        <div class="tit_box">
+		                            <a href="/finance/financeView?rpt_no=37159&mn=002006&skey=&sval=&pg=1&pp=10">
+		                                <p class="">하반기 세계 석유재고 대란 및 석유위기 경고에 대한 평가</p>
+		                            </a>
+		                            <p class="views">조회수 <span>1886</span></p>
+		                        </div>
+		                        <div class="txt_bot">
+		                            <div class="txt_wrap">
+		                                <div class="tag_wrap">
+		                                	<a href="javascript:;">#중동전쟁</a>
+			                            		<a href="javascript:;">#국제유가</a>
+			                            		<a href="javascript:;">#인플레이션</a>
+			                            		</div>
+		                                <span>오정석,강봉주</span>
+	                          			<span>2026.06.05</span>
+		                            </div>
+		                            <div class="download">
+		                                <div class="btn_wrap">
+			                                	<button type="button" class="btn preview" onclick="filePreview('dNcgOBDfpvjUtlqDHLJg2GfhXzIYdgToXUMRI5Nqx0I%3D','N03KgkHbu7TKC%2BaW8ttwRNSE7NhXaCeAdtHCAs0sSAS6%2FxvbO9f8RDvvDEZq7V1C','pdf','260605-글로벌 석유재고 위기 가능성.pdf','K%2Bz%2FdDq6P6pFN41Uz2Dr5A%3D%3D');" kcif-title="하반기 세계 석유재고 대란 및 석유위기 경고에 대한 평가" rpt_no="37159">미리보기</button><div class="file_bubble">
+			                                        <div class="top">
+			                                            <strong>미리보기</strong>
+			                                        </div>
+			                                        <ul id="">
+			                                        		<li><a href="javascript:;" onclick="filePreview('dNcgOBDfpvjUtlqDHLJg2GfhXzIYdgToXUMRI5Nqx0I%3D','N03KgkHbu7TKC%2BaW8ttwRNSE7NhXaCeAdtHCAs0sSAS6%2FxvbO9f8RDvvDEZq7V1C','pdf','260605-글로벌 석유재고 위기 가능성.pdf','K%2Bz%2FdDq6P6pFN41Uz2Dr5A%3D%3D');" title="260605-글로벌 석유재고 위기 가능성.pdf" kcif-title="하반기 세계 석유재고 대란 및 석유위기 경고에 대한 평가" rpt_no="37159">260605-글로벌 석유재고 위기 가능성.pdf</a></li></ul>
+			                                    </div>
+			                                </div>
+		                                <div class="btn_wrap">
+		                                	<button type="button" class="btn down" onclick="reportdownload('K%2Bz%2FdDq6P6pFN41Uz2Dr5A%3D%3D');" kcif-title="하반기 세계 석유재고 대란 및 석유위기 경고에 대한 평가" rpt_no="37159">다운로드</button>
+					                                    <div class="file_bubble">
+		                                        <div class="top">
+		                                            <strong>다운로드</strong>
+		                                        </div>
+		                                        <ul id="">
+		                                        	<li><a href="javascript:;" onclick="reportdownload('K%2Bz%2FdDq6P6pFN41Uz2Dr5A%3D%3D');" title="260605-글로벌 석유재고 위기 가능성.pdf" kcif-title="하반기 세계 석유재고 대란 및 석유위기 경고에 대한 평가" rpt_no="37159">260605-글로벌 석유재고 위기 가능성.pdf</a></li></ul>
+		                                    </div>
+		                                </div>
+	                                </div>
+		                        </div>
+		                    </li>
+                    	<li>
+		                        <h5 class="tit_bar">외환</h5>
+		                        <div class="tit_box">
+		                            <a href="/finance/financeView?rpt_no=37149&mn=002002&skey=&sval=&pg=1&pp=10">
+		                                <p class="">유로존 인플레이션 우려에 따른 유로화 향방 점검</p>
+		                            </a>
+		                            <p class="views">조회수 <span>853</span></p>
+		                        </div>
+		                        <div class="txt_bot">
+		                            <div class="txt_wrap">
+		                                <div class="tag_wrap">
+		                                	<a href="javascript:;">#유로화</a>
+			                            		<a href="javascript:;">#ECB</a>
+			                            		<a href="javascript:;">#통화정책</a>
+			                            		</div>
+		                                <span>조은,이상원</span>
+	                          			<span>2026.06.02</span>
+		                            </div>
+		                            <div class="download">
+		                                <div class="btn_wrap">
+			                                	<button type="button" class="btn preview" onclick="filePreview('dNcgOBDfpvjUtlqDHLJg2HDJru71rPPg8EwhkqQICrE%3D','f72ejyEcLShjQ1c3Xce1asega4W2OxJv9SQJKVenahMATH1PifoZxFLzil1z74dq','pdf','260602-유로존 인플레 우려와 유로화.pdf','Ve1qA4ds73zGZRsvVlSIUw%3D%3D');" kcif-title="유로존 인플레이션 우려에 따른 유로화 향방 점검" rpt_no="37149">미리보기</button><div class="file_bubble">
+			                                        <div class="top">
+			                                            <strong>미리보기</strong>
+			                                        </div>
+			                                        <ul id="">
+			                                        		<li><a href="javascript:;" onclick="filePreview('dNcgOBDfpvjUtlqDHLJg2HDJru71rPPg8EwhkqQICrE%3D','f72ejyEcLShjQ1c3Xce1asega4W2OxJv9SQJKVenahMATH1PifoZxFLzil1z74dq','pdf','260602-유로존 인플레 우려와 유로화.pdf','Ve1qA4ds73zGZRsvVlSIUw%3D%3D');" title="260602-유로존 인플레 우려와 유로화.pdf" kcif-title="유로존 인플레이션 우려에 따른 유로화 향방 점검" rpt_no="37149">260602-유로존 인플레 우려와 유로화.pdf</a></li></ul>
+			                                    </div>
+			                                </div>
+		                                <div class="btn_wrap">
+		                                	<button type="button" class="btn down" onclick="reportdownload('Ve1qA4ds73zGZRsvVlSIUw%3D%3D');" kcif-title="유로존 인플레이션 우려에 따른 유로화 향방 점검" rpt_no="37149">다운로드</button>
+					                                    <div class="file_bubble">
+		                                        <div class="top">
+		                                            <strong>다운로드</strong>
+		                                        </div>
+		                                        <ul id="">
+		                                        	<li><a href="javascript:;" onclick="reportdownload('Ve1qA4ds73zGZRsvVlSIUw%3D%3D');" title="260602-유로존 인플레 우려와 유로화.pdf" kcif-title="유로존 인플레이션 우려에 따른 유로화 향방 점검" rpt_no="37149">260602-유로존 인플레 우려와 유로화.pdf</a></li></ul>
+		                                    </div>
+		                                </div>
+	                                </div>
+		                        </div>
+		                    </li>
+                    	</ul>
+                <div class="page_num">
+                    <button type="button" onclick="pageFunction(1)">이전</button><button type="button" class="prev off" onclick="return false;">이전 페이지로 이동</button><span><a class="on" href="javascript:;" onclick="return false;" style="cursor:default;">1</a><a href="javascript:;" onclick="pageFunction(2);">2</a><a href="javascript:;" onclick="pageFunction(3);">3</a><a href="javascript:;" onclick="pageFunction(4);">4</a><a href="javascript:;" onclick="pageFunction(5);">5</a><a href="javascript:;" onclick="pageFunction(6);">6</a><a href="javascript:;" onclick="pageFunction(7);">7</a><a href="javascript:;" onclick="pageFunction(8);">8</a><a href="javascript:;" onclick="pageFunction(9);">9</a><a href="javascript:;" onclick="pageFunction(10);">10</a></span><button type="button" class="next" onclick="pageFunction(11)">다음 페이지로 이동</button><button type="button" class="n02" onclick="pageFunction(109)">NEXT</button></div>
+            </div>
+            <script type="text/javascript">
+	var startRow = 6;
+	var endRow = 10;
+	
+	function getKeyword(e){
+		var target = $("#tagList");
+		var markup = "";
+		
+		var len = $("#tagList").children().length;
+		if(len < 6){
+			
+			$.ajax({
+				 url : '/report/printRecentTagList'
+				,type : 'POST'
+				,data : {"startRow" : startRow, "endRow" : endRow}
+				,dataType : 'json'
+				,success : function(data){
+					$(data.list).each(function(i){
+						markup += '<a href="/search?sval='+data.list[i].TAG_NM+'">#'+data.list[i].TAG_NM+'</a>';
+					});
+				
+					target.append(markup);
+					$(e).addClass('minus');
+				}, error : function( request, status, error ) {
+					console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		        	alert("일시적인 오류가 발생했습니다.\n다시 시도해주세요.");
+		        	return false;
+				}
+				
+			});
+		}else{
+			for(var i = 0; i < 5; i++){
+				$("#tagList").children().last().remove();
+				$(e).removeClass('minus');
+			}
+		}
+	}
+</script>
+
+<div class="new_keyword">
+    <div class="top">
+        <div class="tit">
+            <h4>최신 <span>Keyword</span></h4>
+            <button type="button" class="plus_btn" onclick="getKeyword(this);">추가</button>
+        </div>
+        <div class="tag_wrap" id="tagList">
+        	<a href="/search?sval=제로 트러스트">#제로 트러스트</a>
+        	<a href="/search?sval=AI">#AI</a>
+        	<a href="/search?sval=망분리">#망분리</a>
+        	<a href="/search?sval=고용">#고용</a>
+        	<a href="/search?sval=GDP 성장률전망">#GDP 성장률전망</a>
+        	</div>
+    </div>
+    <ul class="cont">
+        <li>
+	            <h5 class="tit_bar">금융지표전망</h5>
+	            <a href="/chart/financeView?rpt_no=37275&mn=004001007&skey=&sval=&pg=1&pp=10">[주간] 주요 투자은행 환율전망</a>
+	            <span>조은</span>
+	            <span>2026.07.06</span>
+	        </li>
+        <li>
+	            <h5 class="tit_bar">국제금융속보</h5>
+	            <a href="/annual/reportView?rpt_no=37274&mn=001002&skey=&sval=&pg=1&pp=10">[7.6] 미국과 이란, 11일 협상 재개 예상. 이란 핵 프로그램 논의도 가능할 전망 등</a>
+	            <span>해외동향부</span>
+	            <span>2026.07.06</span>
+	        </li>
+        <li>
+	            <h5 class="tit_bar">주간</h5>
+	            <a href="/annual/reportView?rpt_no=37273&mn=001003&pe=003002&skey=&sval=&pg=1&pp=10">주간 이슈(7.6) : 중동 상황, 나토 정상회의, IMF 전망, 연준 태스크포스 등에 주목</a>
+	            <span>안남기</span>
+	            <span>2026.07.06</span>
+	        </li>
+        <li>
+	            <h5 class="tit_bar">은행</h5>
+	            <a href="/finance/financeView?rpt_no=37268&mn=002007&skey=&sval=&pg=1&pp=10">글로벌 금융권의 네트워크 보안 규제 및 전략 동향</a>
+	            <span>황원정,이승은</span>
+	            <span>2026.07.06</span>
+	        </li>
+        <li>
+	            <h5 class="tit_bar">국제금융속보</h5>
+	            <a href="/annual/reportView?rpt_no=37272&mn=001002&skey=&sval=&pg=1&pp=10">[7.4] 이란, 최고지도자 장례 시작. 호르무즈 해협 통제는 강경 유지 등</a>
+	            <span>이승은</span>
+	            <span>2026.07.04</span>
+	        </li>
+        <li>
+	            <h5 class="tit_bar">주간</h5>
+	            <a href="/annual/reportView?rpt_no=37270&mn=001003&pe=003003&skey=&sval=&pg=1&pp=10">[Fund Flow] 북미를 중심으로 주식펀드 유출 확대, 채권펀드 유입 확대</a>
+	            <span>배기원,박승민</span>
+	            <span>2026.07.03</span>
+	        </li>
+        <li>
+	            <h5 class="tit_bar">미국</h5>
+	            <a href="/economy/economyView?rpt_no=37267&mn=003002&skey=&sval=&pg=1&pp=10">미국 6월 비농업 고용, 4개월 만에 하방 서프라이즈</a>
+	            <span>권혁우,박미정</span>
+	            <span>2026.07.03</span>
+	        </li>
+        <li>
+	            <h5 class="tit_bar">경제지표전망</h5>
+	            <a href="/chart/economyView?rpt_no=37266&mn=004002008&skey=&sval=&pg=1&pp=10">주요 투자은행의 아시아 주요국 경제지표 전망(2026.6월말 기준)</a>
+	            <span>김미승</span>
+	            <span>2026.07.03</span>
+	        </li>
+        <li>
+	            <h5 class="tit_bar">경제지표전망</h5>
+	            <a href="/chart/economyView?rpt_no=37265&mn=004002008&skey=&sval=&pg=1&pp=10">주요 투자은행의 세계경제 및 주요국 성장률 전망 (2026.6월말 기준)</a>
+	            <span>권혁우</span>
+	            <span>2026.07.03</span>
+	        </li>
+        <li>
+	            <h5 class="tit_bar">중국</h5>
+	            <a href="/economy/economyView?rpt_no=37264&mn=003003&skey=&sval=&pg=1&pp=10">중국의 저금리 배경 및 파급영향</a>
+	            <span>김기봉</span>
+	            <span>2026.07.03</span>
+	        </li>
+        </ul>
+    <form id="newsForm" name="newsForm" method="post">
+    <div class="letter_guide">    
+    <input type="hidden" name="user_yn" id="user_yn" value="N"/>
+        <div class="tit">
+            <strong>Newsletter</strong>
+        </div>
+        <div class="emil">
+            <label><input type="email" name="email" id="email" placeholder="e-Mail을 입력하세요"></label>
+        </div>
+        <button type="button" onclick="moveNewsLetter();">구독 신청</button>
+    </div>
+    </form>
+</div></div>
+    </div>
+</section>
+<footer>
+    <div class="container">
+        <div class="foot_info">
+            <h5>국제금융센터</h5>
+            <p>Korea Center for International Finance</p>
+            <div class="address">
+                <address>서울특별시 중구 명동 11길 19 은행회관 3층 국제금융센터  대표전화   02-3705-6200 (야간: 02-3705-6236)   FAX 02-3705-6159</address>
+                <p>Copyright© Korea Center for International Finance. All right reserved.</p>
+            </div>
+        </div>
+        <div class="site_info_wrap">
+            <ul class="site_info">
+                <li>
+                    <a href="/etc/copyright">저작권 정책</a>
+                </li>
+                <li>
+                    <a href="/etc/email">이메일주소무단수집 거부</a>
+                </li>
+                <li>
+                    <a href="/etc/personal">개인정보처리방침</a>
+                </li>
+            </ul>
+            <div class="family_site">
+                <button type="button" onclick="kcifFn.familySite(this)">유관기관</button>
+                <ul>
+                <li><a href="https://www.moef.go.kr/" target="_blank">재정경제부</a></li>
+                <li><a href="https://www.fsc.go.kr" target="_blank">금융위원회</a></li>
+                <li><a href="http://www.bok.or.kr" target="_blank">한국은행</a></li>
+                <li><a href="https://www.fss.or.kr" target="_blank">금융감독원</a></li>
+                <li><a href="https://www.kfb.or.kr" target="_blank">은행연합회</a></li>
+                <li><a href="https://www.kbi.or.kr" target="_blank">한국금융연수원</a></li>
+                <li><a href="https://www.kif.re.kr" target="_blank">한국금융연구원</a></li>
+                <li><a href="https://www.kcredit.or.kr" target="_blank">한국신용정보원</a></li>
+                <li><a href="https://www.kdic.or.kr/" target="_blank">예금보험공사</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- 서비스 안내 팝업 -->
+<div id="accessPopup" class="contact_popup">
+    <div class="contact_top">
+        <p>KCIF 서비스 안내</p>
+        <button type="button" class="close" onclick="kcifFn.miniPopupClose('#accessPopup')">닫기</button>
+    </div>
+    <div class="contact_con">
+        <ul class="access_list">
+            <li>본 자료는&nbsp;<span>유료회원</span>들만 이용할 수 있습니다.</li>
+            <li>귀하께서 이용하실 수 있는 자료는 다음과 같습니다.</li>
+        </ul>
+        <div class="open_box">
+            <ul>
+                <li>정기보고서/국제금융/세계경제 보고서 전문( &nbsp;<span><img src="../res/img/ico_lock.png" alt="자물쇠"></span>&nbsp; 제외)</li>
+                <li>금융ㆍ경제지표 데이터 및 차트(경제ㆍ금융 전망자료 및 상세페이지 제외)</li>
+            </ul>
+        </div>
+        <p>
+            정보이용에 불편을 끼쳐 드려 죄송합니다. 정보이용과
+            관련하여 궁금한 점이 있으시면 연락 주시기 바랍니다.
+        </p>
+        <div class="inquiry">
+            <span>정보이용 문의</span>
+            <p>임주형 팀장 (TEL : 02-3705-6151, E-mail : jhlim@kcif.or.kr)</p>
+        </div>
+    </div>
+</div></body>
+</html>

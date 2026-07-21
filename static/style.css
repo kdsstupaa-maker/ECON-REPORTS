@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+:root {
+    --bg-color: #121212;
+    --card-bg: #1e1e1e;
+    --text-main: #ffffff;
+    --text-muted: #a0a0a0;
+    --point-color: #C9A84C;
+    --border-color: #333333;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    width: 100%;
+    background-color: var(--card-bg);
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 2px solid var(--point-color);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    margin-bottom: 30px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+h1 span {
+    color: var(--point-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+}
+
+.inst-section-title {
+    grid-column: 1 / -1;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: var(--point-color);
+    font-size: 22px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.inst-sub-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.report-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.report-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--point-color);
+}
+
+.inst-name {
+    font-size: 12px;
+    color: var(--point-color);
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.report-title {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 0 15px 0;
+    line-height: 1.4;
+    flex-grow: 1;
+}
+
+.report-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.download-btn {
+    background-color: transparent;
+    color: var(--point-color);
+    text-decoration: none;
+    border: 1px solid var(--point-color);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.download-btn:hover {
+    background-color: var(--point-color);
+    color: var(--bg-color);
+}
+
+.hwp-btn {
+    color: #4CAF50;
+    border-color: #4CAF50;
+}
+
+.hwp-btn:hover {
+    background-color: #4CAF50;
+    color: var(--bg-color);
+}
+
+.empty-state {
+    text-align: center;
+    color: var(--text-muted);
+    padding: 50px;
+    font-size: 16px;
+    grid-column: 1 / -1;
+}

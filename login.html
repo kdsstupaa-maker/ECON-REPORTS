@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#001e5b">
+<meta name="title" content="KCIF 국제금융센터">
+<meta name="keywords" content="KCIF 국제금융센터">
+<meta name="language" content="kr">
+<link rel="shortcut icon" type="image/x-icon"
+	href="/res/img/favicon.ico">
+<link rel="apple-touch-icon-precomposed" sizes="114x114"
+	href="/res/img/favicon.png">
+<link rel="stylesheet" href="/res/font/font.css">
+<link rel="stylesheet" href="/res/css/style.css">
+<link rel="stylesheet" href="/res/css/mypage.css">
+<link rel="stylesheet" href="/res/lib/billboard.css">
+
+<meta name="title"
+			content="KCIF 국제금융센터 - 회원안내 - 로그인">
+	<meta name="description" content="">
+	<meta property="og:type" content="website">
+<meta property="og:image" content="/res/img/OG1.jpg">
+<meta property="og:title"
+			content="KCIF 국제금융센터 - 회원안내 - 로그인">
+	<meta property="og:description" content="">
+	<meta property="og:url" content="https://www.kcif.or.kr">
+<!-- <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet"> -->
+<script type="text/javascript" src="/res/lib/jQuery.v2.2.4.js"></script>
+<script type="text/javascript" src="/res/lib/jQuery.easing.js"></script>
+<script type="text/javascript" src="/res/lib/jQuery.slick.js"></script>
+<script type="text/javascript" src="/res/lib/jquery-ui.js"></script>
+
+<script type="text/javascript" src="/res/lib/d3.v6.min.js"></script>
+<script type="text/javascript" src="/res/lib/billboard.min.js"></script>
+<script type="text/javascript" src="/res/js/kcif_chart.js"></script>
+
+
+<script type="text/javascript" src="/res/js/kcif_indicators.js"></script>
+
+
+<script type="text/javascript" src="/res/js/kcif_main.js"></script>
+<script type="text/javascript" src="/res/js/kcif_item.js"></script>
+
+
+<script type="text/javascript" src="/res/js/kcif_common.js"></script>
+<script type="text/javascript" src="/res/sysMngr/dev_js/cookie.js"></script>
+
+<script async
+	src="https://www.googletagmanager.com/gtag/js?id=G-FGDH2DGS0E"></script>
+<script>
+	(function(w, d, s, l, i) {
+		w[l] = w[l] || [];
+		w[l].push({
+			'gtm.start' : new Date().getTime(),
+			event : 'gtm.js'
+		});
+		var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l='
+				+ l
+				: '';
+		j.async = true;
+		j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+		f.parentNode.insertBefore(j, f);
+	})(window, document, 'script', 'dataLayer', 'GTM-MRT4QHL');
+
+	window.dataLayer = window.dataLayer || [];
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+	gtag('js', new Date());
+
+	gtag('config', 'G-FGDH2DGS0E');
+	
+</script>
+<script type="application/ld+json">
+	{
+		 "@context": "http://schema.org",
+		 "@type": "Organization",
+		 "name": "KCIF 국제금융센터",
+		 "url": "https://www.kcif.or.kr/",
+		 "sameAs": [
+		   "https://www.youtube.com/@user-hs5iq8lc7c"
+		 ]
+	}
+</script><script type="text/javascript">
+	var isMobile = /Mobi/i.test(window.navigator.userAgent);
+	
+	var msg = '';
+	$(function(){		
+		if(msg){
+			alert(msg);
+		}		
+		
+		$(".join_form input").keypress(function (e) {
+        	if (e.which == 13)	Login();
+		});
+		
+		if(isMobile == true){
+			$(".site_area").eq(0).addClass('on');
+			$(".site_area").eq(0).find('button').addClass('on');
+		}
+	});	
+	
+		function Login() {			
+			
+			var rtn = '';			
+			var moveUrl;			
+			if(rtn){
+				moveUrl = decodeURIComponent(rtn).replaceAll(/&amp;/g, "&");
+			}else{
+				moveUrl = "/";
+			}
+			
+			if(!$("#mem_id").val()){
+				alert("아이디를 입력해주세요.");
+				$("#mem_id").focus();
+				return;
+			}
+			
+			if(!$("#mem_pwd").val()){
+				alert("비밀번호를 입력해주세요.");
+				$("#mem_pwd").focus();
+				return;
+			}			
+			
+			$.ajax({
+				 type : 'POST'
+				,url : './loginProc'
+				,data : {"mem_id" : $("#mem_id").val(), "mem_pwd" : $("#mem_pwd").val() }
+				,dataType : "json"
+				,success : function(data) {									
+					// 로그인성공
+					if(data.status == "success"){
+						location.href = moveUrl;
+					// 일반회원 으로 전환 시 알림문구
+					} else if(data.status == "success_tf"){
+						alert(data.msg);
+						location.href = moveUrl;
+					// 휴면대상일 경우
+					}	else if(data.status == "fail_popup_1y" || data.status == "fail_popup_5y" ){
+						// 1년이상 미접속
+						if(data.status == "fail_popup_1y") {
+							kcifFn.layerPopupOpen('#dormantAccount');
+						// 5년이상 미접속
+						} else if (data.status == "fail_popup_5y") {
+							kcifFn.layerPopupOpen('#noAccount');
+						}											
+					}	else{
+						alert(data.msg);
+					}			
+				},error : function( request, status, error ) {
+					console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		    	alert("일시적인 오류가 발생했습니다.\n다시 시도해주세요.");
+		    	return false;
+				}
+			});							
+		}
+		
+		// 휴면전환  페이지 이동
+		function clearSleepUser(){
+			  var form = $('<form></form>');
+			  form.attr("name", "setForm");
+			  form.attr("method", "post");			  
+			  form.attr("action", "/member/clearSleepUser");			  
+			  form.append($('<input/>', {type: 'hidden', name: 'mem_id', value: $("#mem_id").val()}));
+			  form.appendTo("body");
+			  form.submit();
+		}
+	
+	</script>
+	<title>KCIF 국제금융센터</title>
+</head>
+<body>
+<noscript>
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRT4QHL"
+height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<header>
+    <div class="container">
+        <div class="login_wrap">        		
+        
+        	<a href="/webUser/login">LOGIN</a>
+        		<a href="/etc/infromation">고객지원</a>
+            	<a href="/eng">ENG</a>
+            <button type="button" class="search" onclick="kcifFn.headerSearchBtn(this,1)">검색</button>                       
+            <div class="world_search world_search_hide">
+                <div class="world_search_wrap">
+                    <h1 class="logo"><a href="/"><img src="/res/img/main_logo.png" alt="kcif 국제금융센터"></a></h1>
+                    <div class="search_wrap">                    
+                        <p>SEARCH</p>
+                        <label><input type="text" id="sval1" name="sval1" placeholder="검색어를 입력하세요"><button type="button" class="search" onclick="searchAll('sval1');">자료 검색</button></label>
+                        <button type="button" class="close" onclick="kcifFn.headerSearchBtn(this,0)">검색창 닫기</button>                    
+                    </div>
+                </div>
+            </div>
+                        
+        </div>
+        <div class="nav_wrap nav_kr">
+            <h1 class="logo"><a href="/"><img src="/res/img/main_logo.png" alt="kcif 국제금융센터"></a></h1>
+            <div class="menu">
+                <nav>
+                    <ul class="gnb_wrap">
+                    	<li>
+			                            <a href="/annual/reportList">정기보고서</a>
+			                            <div class="gnb_downslide ">
+			                                <div class="guide">
+			                                    <div class="tit_wrap">
+			                                        <h2>정기보고서</h2>
+			                                        <p>Periodicals</p>
+			                                    </div>
+			                                    <div class="menu_each_wrap">
+													<div class="menu_each">
+															<div class="item"><a href="/annual/reportList">전체보고서</a></div>
+																	<div class="item"><a href="/annual/newsflashList">국제금융속보</a></div>
+																	<div class="item"><a href="/annual/weeklyList">주간보고서</a></div>
+																	<div class="item"><a href="/annual/monthlyList">월간보고서</a></div>
+																	<div class="item"><a href="/annual/dailyList">특별일보</a></div>
+																	<div class="item"><a href="/annual/videoList">영상보고서</a></div>
+																	</div>
+														</div>
+</div>
+			                            </div>
+			                        </li>
+		                    	<li>
+			                            <a href="/finance/financeList">국제금융</a>
+			                            <div class="gnb_downslide finance">
+			                                <div class="guide">
+			                                    <div class="tit_wrap">
+			                                        <h2>국제금융</h2>
+			                                        <p>International Finance</p>
+			                                    </div>
+			                                    <div class="menu_each_wrap">
+													<div class="menu_each">
+															<div class="item"><a href="/finance/financeList">전체보고서</a></div>
+																	<div class="item"><a href="/finance/forexList">외환</a></div>
+																	<div class="item"><a href="/finance/bondList">채권</a></div>
+																	<div class="item"><a href="/finance/stockList">주식</a></div>
+																	<div class="item"><a href="/finance/capitalList">자본유출입</a></div>
+																	<div class="item"><a href="/finance/materialsList">원자재</a></div>
+																	<div class="item"><a href="/finance/bankList">은행</a></div>
+																	<div class="item"><a href="/finance/etcList">기타</a></div>
+																	</div>
+														</div>
+</div>
+			                            </div>
+			                        </li>
+		                    	<li>
+			                            <a href="/economy/economyList">세계경제</a>
+			                            <div class="gnb_downslide economy">
+			                                <div class="guide">
+			                                    <div class="tit_wrap">
+			                                        <h2>세계경제</h2>
+			                                        <p>Global Economy</p>
+			                                    </div>
+			                                    <div class="menu_each_wrap">
+													<div class="menu_each">
+															<div class="item"><a href="/economy/economyList">전체보고서</a></div>
+																	<div class="item"><a href="/economy/america">미국</a></div>
+																	<div class="item"><a href="/economy/china">중국</a></div>
+																	<div class="item"><a href="/economy/europe">유럽</a></div>
+																	<div class="item"><a href="/economy/japan">일본</a></div>
+																	<div class="item"><a href="/economy/emerging">신흥국</a></div>
+																	<div class="item"><a href="/economy/global">글로벌</a></div>
+																	<div class="item"><a href="/economy/overseas">해외시각</a></div>
+																	</div>
+														</div>
+</div>
+			                            </div>
+			                        </li>
+		                    	<li>
+			                            <a href="/chart/exchangeList">지표ㆍ자료</a>
+			                            <div class="gnb_downslide chart">
+			                                <div class="guide">
+			                                    <div class="tit_wrap">
+			                                        <h2>지표ㆍ자료</h2>
+			                                        <p>IndexㆍData</p>
+			                                    </div>
+			                                    <div class="menu_each_wrap">
+													<div class="menu_each depth">
+																<div class="item">
+																				<a href="/chart/exchangeList">금융지표</a>
+																			<ul class="menu_each">
+																					<li><a href="/chart/exchangeList">환율</a></li>
+																						<li><a href="/chart/stockList">주가</a></li>
+																						<li><a href="/chart/intrList">금리</a></li>
+																						<li><a href="/chart/commList">원자재</a></li>
+																						<li><a href="/chart/frgnExchRsrvList">외환보유액</a></li>
+																						<li><a href="/chart/majorFinance">주요금융지표</a></li>
+																						<li><a href="/chart/financeList">금융지표전망</a></li>
+																						</ul>
+																			</div>
+<!-- 																		<div class="item"><a href="javascript:;">오시는 길</a></div> -->
+																	<div class="item">
+																				<a href="/chart/ecnmcIndct?ct=AM">경제지표</a>
+																			<ul class="menu_each">
+																					<li><a href="/chart/ecnmcIndct?ct=AM">미국</a></li>
+																						<li><a href="/chart/ecnmcIndct?ct=CN">중국</a></li>
+																						<li><a href="/chart/ecnmcIndct?ct=EU">유럽</a></li>
+																						<li><a href="/chart/ecnmcIndct?ct=JP">일본</a></li>
+																						<li><a href="/chart/ecnmcIndct?ct=EM">신흥국</a></li>
+																						<li><a href="/chart/ecnmcIndct?ct=KR">한국</a></li>
+																						<li><a href="/chart/majorEconomy">주요경제지표</a></li>
+																						<li><a href="/chart/economyList">경제지표전망</a></li>
+																						</ul>
+																			</div>
+<!-- 																		<div class="item"><a href="javascript:;">오시는 길</a></div> -->
+																	</div>
+														</div>
+</div>
+			                            </div>
+			                        </li>
+		                    	<li>
+			                            <a href="/center/greetings">센터소개</a>
+			                            <div class="gnb_downslide center">
+			                                <div class="guide">
+			                                    <div class="tit_wrap">
+			                                        <h2>센터소개</h2>
+			                                        <p>About KCIF</p>
+			                                    </div>
+			                                    <div class="menu_each_wrap">
+													<div class="menu_each depth">
+																<div class="item">
+																				<a href="/center/greetings">센터안내</a>
+																			<ul class="menu_each">
+																					<li><a href="/center/greetings">인사말</a></li>
+																						<li><a href="/center/centerNews">센터 동정</a></li>
+																						<li><a href="/center/history">연혁</a></li>
+																						<li><a href="/center/group">조직ㆍ직원</a></li>
+																						<li><a href="/center/purpose">설립목적ㆍ기능</a></li>
+																						<li><a href="/center/network">KCIF 네트워크</a></li>
+																						<li><a href="/center/ledger">역대원장</a></li>
+																						</ul>
+																			</div>
+<!-- 																		<div class="item"><a href="javascript:;">오시는 길</a></div> -->
+																	<div class="item">
+																				<a href="/center/noticeList">미디어</a>
+																			<ul class="menu_each">
+																					<li><a href="/center/noticeList">공지사항</a></li>
+																						<li><a href="/center/pressList">보도자료</a></li>
+																						<li><a href="/center/contributionList">기고ㆍ강연</a></li>
+																						<li><a href="/center/seminarList">행사ㆍ세미나</a></li>
+																						</ul>
+																			</div>
+<!-- 																		<div class="item"><a href="javascript:;">오시는 길</a></div> -->
+																	<div class="item">
+																				<a href="/center/contact">오시는 길</a>
+																			</div>
+<!-- 																		<div class="item"><a href="javascript:;">오시는 길</a></div> -->
+																	</div>
+														</div>
+</div>
+			                            </div>
+			                        </li>
+		                    	</ul>
+                </nav>
+                <button type="button" class="sitemap_btn" onclick="kcifFn.siteMenuOpen('#siteMap')">햄버거버튼</button>
+            </div>
+        </div>
+        <div class="mo_wrap">
+            <h1 class="logo"><a href="/"><img src="../res/img/main_logo.png" alt="kcif 국제금융센터"></a></h1>
+            <div class="menu">
+                <button type="button" class="search" onclick="kcifFn.headerSearchBtn(this,1)">검색</button>
+                <div class="world_search world_search_hide">
+                    <div class="world_search_wrap">
+                        <h1 class="logo"><a href="/"><img src="../res/img/main_logo.png" alt="kcif 국제금융센터"></a></h1>
+                        <div class="search_wrap">
+                            <p>SEARCH</p>
+                            <label><input type="text" name="sval2" id="sval2"  placeholder="검색어를 입력하세요"><button type="button" class="search" onclick="searchAll('sval2');">자료 검색</button></label>
+                            <button type="button" class="close" onclick="kcifFn.headerSearchBtn(this,0)">검색창 닫기</button>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="sitemap_btn" onclick="kcifFn.siteMenuOpen('#siteMapMo')">햄버거버튼</button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+	function logout_inc_user(name){
+		var result = window.confirm(name + "님 로그아웃 하시겠습니까?");
+		if(result){
+			location.href = "/webUser/login/logout";
+		}
+	}    
+    </script>
+    <!-- 사이트맵 -->
+ <div id="siteMap" class="sitemap">
+    <div class="guide">
+        <div class="sitemap_top">
+            <h1><a href="/"><img src="../res/img/main_logo.png" alt="kcif 국제금융센터"></a></h1>
+            <h2>SITEMAP</h2>
+            <button type="button" class="btn_close" onclick="kcifFn.siteMenuClose('#siteMap')">메뉴 닫기</button>
+        </div>
+        <div class="sitemap_con">
+        	<div class="depth row_two">
+			                <h5><a href="javascript:;">정기보고서</a></h5>
+			                <ul class="menu_each">
+			                	<li><a href="/annual/reportList">전체보고서</a></li>
+				                    		<li><a href="/annual/newsflashList">국제금융속보</a></li>
+				                    		<li><a href="/annual/weeklyList">주간보고서</a></li>
+				                    		<li><a href="/annual/monthlyList">월간보고서</a></li>
+				                    		<li><a href="/annual/dailyList">특별일보</a></li>
+				                    		<li><a href="/annual/videoList">영상보고서</a></li>
+				                    		</ul>
+			            </div>
+		            <div class="depth row_two">
+			                <h5><a href="javascript:;">국제금융</a></h5>
+			                <ul class="menu_each">
+			                	<li><a href="/finance/financeList">전체보고서</a></li>
+				                    		<li><a href="/finance/forexList">외환</a></li>
+				                    		<li><a href="/finance/bondList">채권</a></li>
+				                    		<li><a href="/finance/stockList">주식</a></li>
+				                    		<li><a href="/finance/capitalList">자본유출입</a></li>
+				                    		<li><a href="/finance/materialsList">원자재</a></li>
+				                    		<li><a href="/finance/bankList">은행</a></li>
+				                    		<li><a href="/finance/etcList">기타</a></li>
+				                    		</ul>
+			            </div>
+		            <div class="depth row_two">
+			                <h5><a href="javascript:;">세계경제</a></h5>
+			                <ul class="menu_each">
+			                	<li><a href="/economy/economyList">전체보고서</a></li>
+				                    		<li><a href="/economy/america">미국</a></li>
+				                    		<li><a href="/economy/china">중국</a></li>
+				                    		<li><a href="/economy/europe">유럽</a></li>
+				                    		<li><a href="/economy/japan">일본</a></li>
+				                    		<li><a href="/economy/emerging">신흥국</a></li>
+				                    		<li><a href="/economy/global">글로벌</a></li>
+				                    		<li><a href="/economy/overseas">해외시각</a></li>
+				                    		</ul>
+			            </div>
+		            <div class="depth row_two">
+			                <h5><a href="javascript:;">지표ㆍ자료</a></h5>
+			                <ul class="menu_each">
+			                	<li>
+						                        	<a href="/chart/exchangeList">금융지표</a>
+						                        <ul>
+						                        		<li><a href="/chart/exchangeList">환율</a></li>
+								                            	<li><a href="/chart/stockList">주가</a></li>
+								                            	<li><a href="/chart/intrList">금리</a></li>
+								                            	<li><a href="/chart/commList">원자재</a></li>
+								                            	<li><a href="/chart/frgnExchRsrvList">외환보유액</a></li>
+								                            	<li><a href="/chart/majorFinance">주요금융지표</a></li>
+								                            	<li><a href="/chart/financeList">금융지표전망</a></li>
+								                            	</ul>
+						                    </li>
+				                       	<li>
+						                        	<a href="/chart/ecnmcIndct?ct=AM">경제지표</a>
+						                        <ul>
+						                        		<li><a href="/chart/ecnmcIndct?ct=AM">미국</a></li>
+								                            	<li><a href="/chart/ecnmcIndct?ct=CN">중국</a></li>
+								                            	<li><a href="/chart/ecnmcIndct?ct=EU">유럽</a></li>
+								                            	<li><a href="/chart/ecnmcIndct?ct=JP">일본</a></li>
+								                            	<li><a href="/chart/ecnmcIndct?ct=EM">신흥국</a></li>
+								                            	<li><a href="/chart/ecnmcIndct?ct=KR">한국</a></li>
+								                            	<li><a href="/chart/majorEconomy">주요경제지표</a></li>
+								                            	<li><a href="/chart/economyList">경제지표전망</a></li>
+								                            	</ul>
+						                    </li>
+				                       	</ul>
+			            </div>
+			    	<div class="depth row_two">
+			                <h5><a href="javascript:;">센터소개</a></h5>
+			                <ul class="menu_each">
+			                	<li>
+						                        	<a href="/center/greetings">센터안내</a>
+						                        <ul>
+						                        		<li><a href="/center/greetings">인사말</a></li>
+								                            	<li><a href="/center/centerNews">센터 동정</a></li>
+								                            	<li><a href="/center/history">연혁</a></li>
+								                            	<li><a href="/center/group">조직ㆍ직원</a></li>
+								                            	<li><a href="/center/purpose">설립목적ㆍ기능</a></li>
+								                            	<li><a href="/center/network">KCIF 네트워크</a></li>
+								                            	<li><a href="/center/ledger">역대원장</a></li>
+								                            	</ul>
+						                    </li>
+				                       	<li>
+						                        	<a href="/center/noticeList">미디어</a>
+						                        <ul>
+						                        		<li><a href="/center/noticeList">공지사항</a></li>
+								                            	<li><a href="/center/pressList">보도자료</a></li>
+								                            	<li><a href="/center/contributionList">기고ㆍ강연</a></li>
+								                            	<li><a href="/center/seminarList">행사ㆍ세미나</a></li>
+								                            	</ul>
+						                    </li>
+				                       	<li>
+						                        	<a href="/center/contact">오시는 길</a>
+						                        <ul>
+						                        		</ul>
+						                    </li>
+				                       	</ul>
+			            </div>
+			    	<div class="depth">
+			            	<h5><a href="javascript:;">고객지원</a></h5>
+			                <ul class="menu_each">
+	                        	<li><a href="/etc/infromation">정보이용 안내</a></li>
+			                            	<li><a href="/etc/qnaList">Q&A</a></li>
+			                            	<li><a href="/etc/newsletter">뉴스레터 신청</a></li>
+			                            	<li><a href="/etc/forex">외환위기사례</a></li>
+			                            	</ul>
+			            </div>
+			    	<div class="depth">
+		                    <h5><a href="javascript:;">보고서 모음</a></h5>
+		                    <ul class="menu_each">
+		                    	<li><a href="/analysis/analysisList">분석보고서</a></li>
+			                        		<li><a href="/brief/briefList">이슈브리핑</a></li>
+			                        		<li><a href="/hotissue/hotissueMain">핫이슈</a></li>
+			                        		<li><a href="/report/reportList">전체 보고서 목록</a></li>
+			                        		</ul>
+		                </div>
+		            </div>
+    </div>
+</div><!-- sitemap -->
+  <div id="siteMapMo" class="site_map_mo">
+    <div class="site_map_mo_top">
+        <h1><a href="/"><img src="../res/img/main_logo.png" alt="KCIF 국제금융센터"></a></h1>
+        <div class="right">
+            <button type="button" class="search" onclick="kcifFn.headerSearchBtn(this,1)">검색</button>
+            <div class="world_search world_search_hide">
+                <div class="world_search_wrap">
+                    <h1 class="logo"><a href="/"><img src="../res/img/main_logo_w.png" alt="kcif 국제금융센터"></a></h1>
+                    <div class="search_wrap">
+                        <p>SEARCH</p>
+                        <label><input type="text" name="sval3" placeholder="검색어를 입력하세요"><button type="button" class="search" onclick="searchAll('sval3');">자료 검색</button></label>
+                        <button type="button" class="close" onclick="kcifFn.headerSearchBtn(this,0)">검색창 닫기</button>
+                    </div>
+                </div>
+            </div>
+            <a href="/eng" class="eng">ENG</a>
+            <button type="button" class="close" onclick="kcifFn.siteMenuClose('#siteMapMo')">닫기</button>
+        </div>
+    </div>
+    <div class="site_map_mo_mid">
+        <div class="center_guide">
+            <!-- 각 메뉴에 뎁스에 맞게 on 처리 해주세요 -->
+            <div class="site_area ">
+			                <h5><button type="button" onclick="kcifFn.itemOnOff(this,3)" class="">정기보고서</button></h5>
+			                <div class="menu_wrap no_depth">
+			                    <ul class="depth_2">
+			                    	<li><a href="/annual/reportList" class="">전체보고서</a></li>
+			                        		<li><a href="/annual/newsflashList" class="">국제금융속보</a></li>
+			                        		<li><a href="/annual/weeklyList" class="">주간보고서</a></li>
+			                        		<li><a href="/annual/monthlyList" class="">월간보고서</a></li>
+			                        		<li><a href="/annual/dailyList" class="">특별일보</a></li>
+			                        		<li><a href="/annual/videoList" class="">영상보고서</a></li>
+			                        		</ul>
+			                </div>
+			            </div>
+		            <div class="site_area ">
+			                <h5><button type="button" onclick="kcifFn.itemOnOff(this,3)" class="">국제금융</button></h5>
+			                <div class="menu_wrap no_depth">
+			                    <ul class="depth_2">
+			                    	<li><a href="/finance/financeList" class="">전체보고서</a></li>
+			                        		<li><a href="/finance/forexList" class="">외환</a></li>
+			                        		<li><a href="/finance/bondList" class="">채권</a></li>
+			                        		<li><a href="/finance/stockList" class="">주식</a></li>
+			                        		<li><a href="/finance/capitalList" class="">자본유출입</a></li>
+			                        		<li><a href="/finance/materialsList" class="">원자재</a></li>
+			                        		<li><a href="/finance/bankList" class="">은행</a></li>
+			                        		<li><a href="/finance/etcList" class="">기타</a></li>
+			                        		</ul>
+			                </div>
+			            </div>
+		            <div class="site_area ">
+			                <h5><button type="button" onclick="kcifFn.itemOnOff(this,3)" class="">세계경제</button></h5>
+			                <div class="menu_wrap no_depth">
+			                    <ul class="depth_2">
+			                    	<li><a href="/economy/economyList" class="">전체보고서</a></li>
+			                        		<li><a href="/economy/america" class="">미국</a></li>
+			                        		<li><a href="/economy/china" class="">중국</a></li>
+			                        		<li><a href="/economy/europe" class="">유럽</a></li>
+			                        		<li><a href="/economy/japan" class="">일본</a></li>
+			                        		<li><a href="/economy/emerging" class="">신흥국</a></li>
+			                        		<li><a href="/economy/global" class="">글로벌</a></li>
+			                        		<li><a href="/economy/overseas" class="">해외시각</a></li>
+			                        		</ul>
+			                </div>
+			            </div>
+		            <div class="site_area ">
+			                <h5><button type="button" onclick="kcifFn.itemOnOff(this,3)" class="">지표ㆍ자료</button></h5>
+			                <div class="menu_wrap">
+			                    <ul class="depth_2">
+			                    	<li>
+						                            <button type="button" onclick="kcifFn.itemOnOff(this,2)" class="">금융지표</button>
+						                            <ul class="depth_3">
+						                                <li><a href="/chart/exchangeList">환율</a></li>
+						                                		<li><a href="/chart/stockList">주가</a></li>
+						                                		<li><a href="/chart/intrList">금리</a></li>
+						                                		<li><a href="/chart/commList">원자재</a></li>
+						                                		<li><a href="/chart/frgnExchRsrvList">외환보유액</a></li>
+						                                		<li><a href="/chart/majorFinance">주요금융지표</a></li>
+						                                		<li><a href="/chart/financeList">금융지표전망</a></li>
+						                                		</ul>
+						                        </li>
+				                        	<li>
+						                            <button type="button" onclick="kcifFn.itemOnOff(this,2)" class="">경제지표</button>
+						                            <ul class="depth_3">
+						                                <li><a href="/chart/ecnmcIndct?ct=AM">미국</a></li>
+						                                		<li><a href="/chart/ecnmcIndct?ct=CN">중국</a></li>
+						                                		<li><a href="/chart/ecnmcIndct?ct=EU">유럽</a></li>
+						                                		<li><a href="/chart/ecnmcIndct?ct=JP">일본</a></li>
+						                                		<li><a href="/chart/ecnmcIndct?ct=EM">신흥국</a></li>
+						                                		<li><a href="/chart/ecnmcIndct?ct=KR">한국</a></li>
+						                                		<li><a href="/chart/majorEconomy">주요경제지표</a></li>
+						                                		<li><a href="/chart/economyList">경제지표전망</a></li>
+						                                		</ul>
+						                        </li>
+				                        	</ul>
+			                </div>
+			            </div>
+	            	<div class="site_area ">
+			                <h5><button type="button" onclick="kcifFn.itemOnOff(this,3)" class="">센터소개</button></h5>
+			                <div class="menu_wrap">
+			                    <ul class="depth_2">
+			                    	<li>
+						                            <button type="button" onclick="kcifFn.itemOnOff(this,2)" class="">센터안내</button>
+						                            <ul class="depth_3">
+						                                <li><a href="/center/greetings">인사말</a></li>
+						                                		<li><a href="/center/centerNews">센터 동정</a></li>
+						                                		<li><a href="/center/history">연혁</a></li>
+						                                		<li><a href="/center/group">조직ㆍ직원</a></li>
+						                                		<li><a href="/center/purpose">설립목적ㆍ기능</a></li>
+						                                		<li><a href="/center/network">KCIF 네트워크</a></li>
+						                                		<li><a href="/center/ledger">역대원장</a></li>
+						                                		</ul>
+						                        </li>
+				                        	<li>
+						                            <button type="button" onclick="kcifFn.itemOnOff(this,2)" class="">미디어</button>
+						                            <ul class="depth_3">
+						                                <li><a href="/center/noticeList">공지사항</a></li>
+						                                		<li><a href="/center/pressList">보도자료</a></li>
+						                                		<li><a href="/center/contributionList">기고ㆍ강연</a></li>
+						                                		<li><a href="/center/seminarList">행사ㆍ세미나</a></li>
+						                                		</ul>
+						                        </li>
+				                        	<li><a href="/center/contact" class="">오시는 길</a></li>
+				                        	</ul>
+			                </div>
+			            </div>
+	            	<div class="mo_login_wrap ">
+                <a href="/webUser/login" class="login btn">LOGIN</a>
+	        		</div>
+            <div class="site_area info_btn ">
+            	<h5><button type="button" class="btn " onclick="kcifFn.itemOnOff(this,3)">고객지원</button></h5>
+		                <div class="menu_wrap no_depth">
+		                    <ul class="depth_2">
+		                    	<li><a href="/etc/infromation" class="">정보이용 안내</a></li>
+		                        		<li><a href="/etc/qnaList" class="">Q&A</a></li>
+		                        		<li><a href="/etc/newsletter" class="">뉴스레터 신청</a></li>
+		                        		<li><a href="/etc/forex" class="">외환위기사례</a></li>
+		                        		</ul>
+		                </div>
+	            	</div>
+        </div>
+    </div>
+</div></header><section id="contents" class="mypage">
+    <div class="container">
+        <div class="page_top">
+            <h2>로그인<em>Login</em></h2>
+        </div>
+        <div class="linemap_guide-box">
+    <div class="comm_linemap">
+        <a href="/" class="home">HOME</a>
+        <div class="depth">
+            <button type="button" onclick="kcifFn.lineMapMenu(this)">회원안내</button>
+            <ul>                
+            <li><a href="/annual/reportList">정기보고서</a></li>
+                <li><a href="/finance/financeList">국제금융</a></li>
+                <li><a href="/economy/economyList">세계경제</a></li>
+                <li><a href="/chart/exchangeList">지표ㆍ자료</a></li>
+                <li><a href="/center/greetings">센터소개</a></li>
+                <li><a href="/analysis/analysisList">보고서 모음</a></li>
+                </ul>
+        </div>
+        <div class="depth">
+        <button type="button" onclick="kcifFn.lineMapMenu(this)">로그인</button>
+            <ul>
+            		<li><a class="on" href="/webUser/login">로그인</a></li>		
+            					<li><a class="on" href="/member/joinstep1">회원가입</a></li>		
+            					<li><a class="on" href="/member/findidpw">아이디 · 비밀번호 찾기</a></li>		
+            					<li><a class="on" href="/member/pwConfirm">회원정보수정</a></li>
+            					<li><a class="on" href="/member/clearSleepUser">휴면계정 해제</a></li>		
+            					</ul>
+        </div>
+    </div>
+</div>
+<div class="page_wrap header_point">
+            <div class="page_mypage_wrap bg_mypage">
+                <div class="contents_wrap_mypage login">
+                    <div class="join_form">
+                        <h3>Welcome to KCIF</h3>
+                        <p>국제금융센터의 더 많은 정보를 이용하시기 위해서는 회원가입/로그인을 하시기 바랍니다.</p>
+                        <ul>
+                            <li>
+                                <div class="label_con">
+                                    <label><input type="text" name="mem_id" id="mem_id" placeholder="아이디"></label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="label_con">
+                                    <label><input type="password" name="mem_pwd" id="mem_pwd" placeholder="비밀번호"></label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="javascript:;" class="move col_green" onclick="Login();">로그인</a>
+                    <!--
+                        계정이 휴면상태일 경우, onclick="kcifFn.layerPopupOpen('#dormantAccount');" 추가
+                        계정이 없을 경우 , onclick="kcifFn.layerPopupOpen('#noAccount');" 추가
+                     -->
+                    <div class="btn_box">
+                        <a href="/member/joinstep1">회원가입</a>
+                        <a href="/member/findidpw">아이디 · 비밀번호 찾기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+ <!-- 팝업 - 휴면계정 -->
+ <div id="dormantAccount" class="layer_popup join">
+     <div class="double_check_box">
+         <div class="pop_tit">
+             <p>휴면계정</p>
+             <button class="btn_x" type="button" onclick="kcifFn.layerPopupClose('#dormantAccount');">닫기</button>
+         </div>
+         <div class="pop_conts">
+             <div class="text_box">
+                 <p>회원님의 계정 상태가 휴면으로 전환되었습니다.</p>
+                 <p>휴면계정 해제 페이지에서 상태를 해제해 주세요.</p>
+             </div>
+             <button type="button" onclick="clearSleepUser();" title="확인">확인</button>
+         </div>
+     </div>
+ </div>
+
+<!-- 팝업 - 계정이 존재하지 않을 경우 -->
+<div id="noAccount" class="layer_popup join">
+    <div class="double_check_box">
+        <div class="pop_tit">
+            <p>휴면계정</p>
+            <button class="btn_x" type="button" onclick="kcifFn.layerPopupClose('#noAccount');">닫기</button>
+        </div>
+        <div class="pop_conts">
+            <div class="text_box">
+                <p>해당 계정이 존재하지 않습니다.</p>
+                <p>회원가입을 진행해주세요.</p>
+            </div>
+            <button type="button" onclick="javascript:location.href='/webUser/login'" title="확인">확인</button>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="foot_info">
+            <h5>국제금융센터</h5>
+            <p>Korea Center for International Finance</p>
+            <div class="address">
+                <address>서울특별시 중구 명동 11길 19 은행회관 3층 국제금융센터  대표전화   02-3705-6200 (야간: 02-3705-6236)   FAX 02-3705-6159</address>
+                <p>Copyright© Korea Center for International Finance. All right reserved.</p>
+            </div>
+        </div>
+        <div class="site_info_wrap">
+            <ul class="site_info">
+                <li>
+                    <a href="/etc/copyright">저작권 정책</a>
+                </li>
+                <li>
+                    <a href="/etc/email">이메일주소무단수집 거부</a>
+                </li>
+                <li>
+                    <a href="/etc/personal">개인정보처리방침</a>
+                </li>
+            </ul>
+            <div class="family_site">
+                <button type="button" onclick="kcifFn.familySite(this)">유관기관</button>
+                <ul>
+                <li><a href="https://www.moef.go.kr/" target="_blank">재정경제부</a></li>
+                <li><a href="https://www.fsc.go.kr" target="_blank">금융위원회</a></li>
+                <li><a href="http://www.bok.or.kr" target="_blank">한국은행</a></li>
+                <li><a href="https://www.fss.or.kr" target="_blank">금융감독원</a></li>
+                <li><a href="https://www.kfb.or.kr" target="_blank">은행연합회</a></li>
+                <li><a href="https://www.kbi.or.kr" target="_blank">한국금융연수원</a></li>
+                <li><a href="https://www.kif.re.kr" target="_blank">한국금융연구원</a></li>
+                <li><a href="https://www.kcredit.or.kr" target="_blank">한국신용정보원</a></li>
+                <li><a href="https://www.kdic.or.kr/" target="_blank">예금보험공사</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- 서비스 안내 팝업 -->
+<div id="accessPopup" class="contact_popup">
+    <div class="contact_top">
+        <p>KCIF 서비스 안내</p>
+        <button type="button" class="close" onclick="kcifFn.miniPopupClose('#accessPopup')">닫기</button>
+    </div>
+    <div class="contact_con">
+        <ul class="access_list">
+            <li>본 자료는&nbsp;<span>유료회원</span>들만 이용할 수 있습니다.</li>
+            <li>귀하께서 이용하실 수 있는 자료는 다음과 같습니다.</li>
+        </ul>
+        <div class="open_box">
+            <ul>
+                <li>정기보고서/국제금융/세계경제 보고서 전문( &nbsp;<span><img src="../res/img/ico_lock.png" alt="자물쇠"></span>&nbsp; 제외)</li>
+                <li>금융ㆍ경제지표 데이터 및 차트(경제ㆍ금융 전망자료 및 상세페이지 제외)</li>
+            </ul>
+        </div>
+        <p>
+            정보이용에 불편을 끼쳐 드려 죄송합니다. 정보이용과
+            관련하여 궁금한 점이 있으시면 연락 주시기 바랍니다.
+        </p>
+        <div class="inquiry">
+            <span>정보이용 문의</span>
+            <p>임주형 팀장 (TEL : 02-3705-6151, E-mail : jhlim@kcif.or.kr)</p>
+        </div>
+    </div>
+</div></body>
+</html>
