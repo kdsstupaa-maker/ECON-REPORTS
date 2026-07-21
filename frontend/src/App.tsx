@@ -3,25 +3,21 @@ import axios from 'axios';
 import { Search, Download, Building2, Calendar, FileText } from 'lucide-react';
 
 interface Report {
-  id: number;
-  report_key: string;
-  source_name: string;
+  id?: number;
+  report_key?: string;
+  source_name?: string;
+  institution?: string;
   title: string;
-  author: string | null;
-  publish_date: string | null;
-  summary_data: any;
+  author?: string | null;
+  publish_date?: string | null;
+  date?: string;
+  filename?: string;
+  url?: string;
+  summary_data?: any;
 }
 
 const INSTITUTIONS = [
-  "한국은행", "KDI경제연구원", "국제금융센터", "금융연구원", "IMF", 
-  "자본시장연구원", "우리금융경영연구소", "BIS", "산업연구원", "PIMCO", 
-  "Fed San Francisco", "상공회의소", "금감원", "현대경제연구원", 
-  "부동산연구원", "한국경영자협회", "조세재정연", "한국안보전략연구원", 
-  "OECD", "한국리츠협회", "토지주택연구원", "무역협회국제무역통상연구원", 
-  "예금보험공사", "주택산업연구원", "아산정책연구원", "한신평", "kb금융연구소", 
-  "하나금융연구소", "포스코경영연구원", "나이스신평", "BlackRock", 
-  "대외경제정책연구원", "한기평", "Fed New York", "국회예산정책보고서", 
-  "국가데이터처", "금융위", "보험연구원"
+  "한국은행", "국제금융센터", "산업연구원", "KDI", "금융감독원", "IMF"
 ];
 
 function App() {
@@ -46,10 +42,23 @@ function App() {
     }
   };
 
-  const handleDownload = (id: number) => {
+  const handleDownload = (report: Report) => {
     const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
-    window.open(`${API_BASE_URL}/api/reports/${id}/pdf`, '_blank');
+    if (report.filename) {
+      window.open(`${API_BASE_URL}/pdfs/${report.filename}`, '_blank');
+    } else if (report.url) {
+      window.open(report.url, '_blank');
+    } else if (report.id) {
+      window.open(`${API_BASE_URL}/api/reports/${report.id}/pdf`, '_blank');
+    }
   };
+
+  const filteredReports = reports.filter(r => {
+    const inst = r.institution || r.source_name || '';
+    const titleMatches = r.title.toLowerCase().includes(search.toLowerCase());
+    const sourceMatches = selectedSource === "" || inst.includes(selectedSource);
+    return titleMatches && sourceMatches;
+  });
 
   return (
     <div className="min-h-screen bg-background text-textPrimary font-sans">
@@ -98,36 +107,36 @@ function App() {
           </div>
 
           <div className="space-y-4">
-            {reports.length === 0 ? (
+            {filteredReports.length === 0 ? (
               <div className="text-center py-12 text-textSecondary bg-surface rounded-xl">
                 조건에 맞는 리포트가 없습니다.
               </div>
             ) : (
-              reports.map(r => (
-                <div key={r.id} className="bg-surface p-6 rounded-xl hover:ring-1 hover:ring-primary transition-all">
+              filteredReports.map((r, idx) => (
+                <div key={r.id || idx} className="bg-surface p-6 rounded-xl hover:ring-1 hover:ring-primary transition-all">
                   <div className="flex justify-between items-start gap-4">
                     <div>
-                      <span className="inline-block px-3 py-1 bg-background text-primary text-xs rounded-full mb-3">
-                        {r.source_name}
+                      <span className="inline-block px-3 py-1 bg-background text-primary text-xs rounded-full mb-3 font-semibold">
+                        {r.institution || r.source_name}
                       </span>
                       <h3 className="text-xl font-medium mb-2">{r.title}</h3>
                       <div className="flex items-center gap-4 text-sm text-textSecondary mb-4">
-                        <span className="flex items-center gap-1"><Calendar size={14} /> {r.publish_date || '날짜 미상'}</span>
+                        <span className="flex items-center gap-1"><Calendar size={14} /> {r.date || r.publish_date || '날짜 미상'}</span>
                         {r.author && <span className="flex items-center gap-1"><FileText size={14} /> {r.author}</span>}
                       </div>
                       
                       {r.summary_data && r.summary_data.summary && (
                         <ul className="space-y-1 text-sm text-textSecondary list-disc list-inside mb-4">
-                          {r.summary_data.summary.map((s: string, idx: number) => (
-                            <li key={idx}>{s}</li>
+                          {r.summary_data.summary.map((s: string, sIdx: number) => (
+                            <li key={sIdx}>{s}</li>
                           ))}
                         </ul>
                       )}
                       
                       {r.summary_data && r.summary_data.keywords && (
                         <div className="flex flex-wrap gap-2">
-                          {r.summary_data.keywords.map((kw: string, idx: number) => (
-                            <span key={idx} className="text-xs bg-background px-2 py-1 rounded text-textSecondary">
+                          {r.summary_data.keywords.map((kw: string, kIdx: number) => (
+                            <span key={kIdx} className="text-xs bg-background px-2 py-1 rounded text-textSecondary">
                               #{kw}
                             </span>
                           ))}
@@ -136,7 +145,7 @@ function App() {
                     </div>
                     
                     <button 
-                      onClick={() => handleDownload(r.id)}
+                      onClick={() => handleDownload(r)}
                       className="flex items-center gap-2 bg-primary text-background px-4 py-2 rounded-lg font-medium hover:opacity-90 transition-opacity shrink-0"
                     >
                       <Download size={18} /> PDF
