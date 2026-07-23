@@ -19,17 +19,87 @@ HEADERS = {
 }
 
 TARGET_SITES = [
+    # === 한국은행 (보도자료, 조사연구, 이슈노트 등) ===
     {"name": "한국은행", "list_url": "https://www.bok.or.kr/portal/singl/newsData/list.do?menuNo=201263"},
     {"name": "한국은행", "list_url": "https://www.bok.or.kr/portal/singl/newsData/list.do?menuNo=201156"},
     {"name": "한국은행", "list_url": "https://www.bok.or.kr/portal/singl/newsData/list.do?menuNo=200433"},
     {"name": "한국은행", "list_url": "https://www.bok.or.kr/portal/singl/newsData/list.do?menuNo=201265"},
+    # === 국제금융센터 ===
     {"name": "국제금융센터", "list_url": "https://www.kcif.or.kr/front/board/boardList.do?intSection1=1&intSection2=1"},
-    {"name": "산업연구원(동향분석)", "list_url": "https://www.kiet.re.kr/research/issueList"},
-    {"name": "산업연구원(연구보고서)", "list_url": "https://www.kiet.re.kr/research/reportList"},
+    # === 산업연구원 ===
+    {"name": "산업연구원", "list_url": "https://www.kiet.re.kr/research/issueList"},
+    {"name": "산업연구원", "list_url": "https://www.kiet.re.kr/research/reportList"},
+    # === 금융감독원 ===
     {"name": "금융감독원", "list_url": "https://www.fss.or.kr/fss/bbs/B0000188/list.do?menuNo=200218"},
-    {"name": "KDI(KDI Focus)", "list_url": "https://www.kdi.re.kr/research/focus"},
-    {"name": "KDI(연구보고서)", "list_url": "https://www.kdi.re.kr/research/reportList"},
-    {"name": "IMF", "list_url": "https://www.imf.org/en/Publications/Search?series=IMF+Working+Papers"}
+    # === KDI ===
+    {"name": "KDI", "list_url": "https://www.kdi.re.kr/research/focus"},
+    {"name": "KDI", "list_url": "https://www.kdi.re.kr/research/reportList"},
+    # === IMF ===
+    {"name": "IMF", "list_url": "https://www.imf.org/en/Publications/Search?series=IMF+Working+Papers"},
+    # === 금융위원회 ===
+    {"name": "금융위", "list_url": "https://www.fsc.go.kr/info/ntc_news_list"},
+    # === 금융연구원 ===
+    {"name": "금융연구원", "list_url": "https://www.kif.re.kr/kif2/research/director_report.aspx"},
+    # === 자본시장연구원 ===
+    {"name": "자본시장연구원", "list_url": "https://www.kcmi.re.kr/report/report_list"},
+    # === 우리금융경영연구소 ===
+    {"name": "우리금융경영연구소", "list_url": "https://www.woorifg.com/kor/research/report.do"},
+    # === BIS ===
+    {"name": "BIS", "list_url": "https://www.bis.org/doclist/papers.htm"},
+    # === PIMCO ===
+    {"name": "PIMCO", "list_url": "https://www.pimco.com/en-us/insights"},
+    # === Fed San Francisco ===
+    {"name": "Fed San Francisco", "list_url": "https://www.frbsf.org/research-and-insights/publications/economic-letter/"},
+    # === 상공회의소 ===
+    {"name": "상공회의소", "list_url": "https://www.korcham.net/nCham/Service/Economy/appl/KcciReportList.asp"},
+    # === 현대경제연구원 ===
+    {"name": "현대경제연구원", "list_url": "https://www.hri.co.kr/board/reportList.asp"},
+    # === 부동산연구원 ===
+    {"name": "부동산연구원", "list_url": "https://www.reb.or.kr/r-one/research/report.do"},
+    # === 한국경영자총협회 ===
+    {"name": "한국경영자협회", "list_url": "https://www.kefplaza.com/web/pages/gc415100.asp"},
+    # === 조세재정연구원 ===
+    {"name": "조세재정연", "list_url": "https://www.kipf.re.kr/cmm/fms/TotalFileDown.do"},
+    # === 한국안보전략연구원 ===
+    {"name": "한국안보전략연구원", "list_url": "https://www.inss.re.kr/publication/periodical.do"},
+    # === OECD ===
+    {"name": "OECD", "list_url": "https://www.oecd.org/en/publications.html"},
+    # === 한국리츠협회 ===
+    {"name": "한국리츠협회", "list_url": "https://www.kareit.or.kr/board/boardList.do"},
+    # === 토지주택연구원 ===
+    {"name": "토지주택연구원", "list_url": "https://www.krihs.re.kr/publica/reportList.do"},
+    # === 무역협회국제무역통상연구원 ===
+    {"name": "무역협회국제무역통상연구원", "list_url": "https://www.kita.net/cmmrcInfo/rsrchReprt/list.do"},
+    # === 예금보험공사 ===
+    {"name": "예금보험공사", "list_url": "https://www.kdic.or.kr/data/publication.do"},
+    # === 주택산업연구원 ===
+    {"name": "주택산업연구원", "list_url": "https://www.khi.re.kr/board_report"},
+    # === 아산정책연구원 ===
+    {"name": "아산정책연구원", "list_url": "https://www.asaninst.org/contents/"},
+    # === 한신평 (한국신용평가) ===
+    {"name": "한신평", "list_url": "https://www.kisrating.com/research/report.do"},
+    # === kb금융연구소 ===
+    {"name": "kb금융연구소", "list_url": "https://www.kbfg.com/kbresearch/report/reportList.do"},
+    # === 하나금융연구소 ===
+    {"name": "하나금융연구소", "list_url": "https://www.hanafn.com/research/researchMain.do"},
+    # === 포스코경영연구원 ===
+    {"name": "포스코경영연구원", "list_url": "https://www.posri.re.kr/ko/board/content/list?board_id=report"},
+    # === 나이스신평 ===
+    {"name": "나이스신평", "list_url": "https://www.nicerating.com/research/researchList.do"},
+    # === BlackRock ===
+    {"name": "BlackRock", "list_url": "https://www.blackrock.com/corporate/insights"},
+    # === 대외경제정책연구원 ===
+    {"name": "대외경제정책연구원", "list_url": "https://www.kiep.go.kr/gallery.es?mid=a10101000000"},
+    # === 한기평 (한국기업평가) ===
+    {"name": "한기평", "list_url": "https://www.korearatings.com/report/report_list.do"},
+    # === Fed New York ===
+    {"name": "Fed New York", "list_url": "https://www.newyorkfed.org/research"},
+    # === 국회예산정책처 ===
+    {"name": "국회예산정책보고서", "list_url": "https://www.nabo.go.kr/report/reportList.do"},
+    # === 국가데이터처 ===
+    {"name": "국가데이터처", "list_url": "https://www.mois.go.kr/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000062"},
+    # === 보험연구원 ===
+    {"name": "보험연구원", "list_url": "https://www.kiri.or.kr/report/reportList.do"},
 ]
 
 def get_cutoff_date(business_days_ago=2):
@@ -61,6 +131,11 @@ def download_file(url, inst_name, title, date_str, data_list, existing_urls):
     if url in existing_urls:
         return
         
+    # PDF만 허용하도록 파일명 체크
+    if title.lower().endswith('.hwp') or title.lower().endswith('.hwpx') or title.lower().endswith('.doc') or title.lower().endswith('.docx'):
+        print(f"Skipped non-PDF: {title}")
+        return
+        
     try:
         res = requests.get(url, headers=HEADERS, stream=True, timeout=20, verify=False)
         content_type = res.headers.get('Content-Type', '').lower()
@@ -71,14 +146,6 @@ def download_file(url, inst_name, title, date_str, data_list, existing_urls):
             
         url_hash = hashlib.md5(url.encode()).hexdigest()[:8]
         ext = ".pdf"
-        if title.lower().endswith(".hwp"):
-            ext = ".hwp"
-        elif title.lower().endswith(".hwpx"):
-            ext = ".hwpx"
-        elif title.lower().endswith(".doc"):
-            ext = ".doc"
-        elif title.lower().endswith(".docx"):
-            ext = ".docx"
         
         filename = f"{inst_name}_{url_hash}{ext}"
         filepath = os.path.join(PDFS_DIR, filename)
@@ -107,15 +174,21 @@ def scrape_generic_bbs(page, inst_name, list_url, data_list, existing_urls):
         try:
             page.goto(list_url, wait_until="networkidle", timeout=30000)
         except:
-            # networkidle 타임아웃 시 domcontentloaded로 재시도
             page.goto(list_url, wait_until="domcontentloaded", timeout=30000)
-        time.sleep(3) # 추가 대기
+        time.sleep(3)
         
         html = page.content()
         soup = BeautifulSoup(html, 'html.parser')
         
         a_tags = soup.find_all('a', href=True)
         processed_hrefs = set()
+        
+        date_patterns = [
+            r'202[0-9][-\.\s]+[0-1]?[0-9][-\.\s]+[0-3]?[0-9]',  # 2026-07-22, 2026.07.22
+            r'202[0-9]\s*년\s*[0-1]?[0-9]\s*월\s*[0-3]?[0-9]\s*일',  # 2026년 7월 22일
+            r'\b2[0-9][-\.\s]+[0-1]?[0-9][-\.\s]+[0-3]?[0-9]\b', # 26.07.22
+            r'([A-Za-z]{3,9})\s+(\d{1,2}),\s+(202[0-9])' # Jul 22, 2026
+        ]
         
         for a_tag in a_tags:
             href = a_tag['href']
@@ -130,76 +203,91 @@ def scrape_generic_bbs(page, inst_name, list_url, data_list, existing_urls):
             
             link = urllib.parse.urljoin(list_url, href)
             
-            date_str = "1970-01-01" # 기본값을 아주 옛날로 설정하여 날짜를 못 찾으면 스킵하게 함
+            date_str = "1970-01-01"
             
-            date_str = "1970-01-01" # 기본값을 아주 옛날로 설정하여 날짜를 못 찾으면 스킵하게 함
-            parent = a_tag.parent
-            for _ in range(6):
-                if not parent or parent.name == 'body': break
-                txt = parent.get_text(separator=' ', strip=True)
+            container = a_tag.find_parent(['tr', 'li', 'div', 'dl'])
+            if not container:
+                container = a_tag.parent
                 
-                # YYYY-MM-DD, YYYY.MM.DD, YYYY. M. D. 등 모두 매칭
-                match = re.search(r'202[0-9][-\.\s]+[0-1]?[0-9][-\.\s]+[0-3]?[0-9]', txt)
+            txt = container.get_text(separator=' ', strip=True) if container else a_tag.get_text(separator=' ', strip=True)
+            
+            for pattern in date_patterns:
+                match = re.search(pattern, txt)
                 if match:
-                    clean = re.sub(r'[-\.\s]+', '-', match.group(0).strip('-.'))
-                    parts = clean.split('-')
-                    if len(parts) == 3:
-                        date_str = f"{parts[0]}-{int(parts[1]):02d}-{int(parts[2]):02d}"
-                    else:
-                        date_str = clean
-                    break
-                else:
-                    # IMF 등의 영문 날짜 (July 16, 2026) 매칭
-                    match_en = re.search(r'([A-Za-z]{3,9})\s+(\d{1,2}),\s+(202[0-9])', txt)
-                    if match_en:
-                        month_str, day, year = match_en.groups()
+                    if '년' in match.group(0):
+                        clean = re.sub(r'[^0-9]', '-', match.group(0))
+                        clean = re.sub(r'-+', '-', clean).strip('-')
+                        parts = clean.split('-')
+                        if len(parts) >= 3:
+                            date_str = f"{parts[0]}-{int(parts[1]):02d}-{int(parts[2]):02d}"
+                    elif re.search(r'[A-Za-z]', match.group(0)):
+                        month_str, day, year = match.groups()
                         try:
                             month = datetime.strptime(month_str[:3], '%b').month
                             date_str = f"{year}-{month:02d}-{int(day):02d}"
-                            break
-                        except:
-                            pass
-                parent = parent.parent
-                    
+                        except: pass
+                    else:
+                        clean = re.sub(r'[-\.\s]+', '-', match.group(0).strip('-.'))
+                        parts = clean.split('-')
+                        if len(parts) >= 3:
+                            year = parts[0]
+                            if len(year) == 2: year = "20" + year
+                            date_str = f"{year}-{int(parts[1]):02d}-{int(parts[2]):02d}"
+                    if date_str != "1970-01-01":
+                        break
+                        
             if not is_recent(date_str):
                 continue
                 
             print(f"DEBUG: Found recent link {title} {date_str} {link}")
             
             try:
-                if 'javascript:' in link.lower():
+                if 'javascript:' in link.lower() and 'kcif' not in link:
                     continue
                     
-                # 리스트 페이지에 첨부파일이 직접 연결된 경우 (금감원 등)
-                if 'filedown' in link.lower() or '.pdf' in link.lower() or '.hwp' in link.lower():
+                if 'filedown' in link.lower() or '.pdf' in link.lower() or 'download' in link.lower():
+                    if '.hwp' in link.lower() or '.doc' in link.lower() or '.zip' in link.lower():
+                        continue
                     clean_att_text = re.sub(r'[\/\\\:\*\?\"\<\>\|]', '_', title)
-                    if not clean_att_text.lower().endswith('.pdf') and not clean_att_text.lower().endswith('.hwp') and not clean_att_text.lower().endswith('.hwpx'):
+                    if not clean_att_text.lower().endswith('.pdf'):
                         clean_att_text += ".pdf"
                     final_title = f"[{inst_name}] {clean_att_text}"
                     download_file(link, inst_name, final_title, date_str, data_list, existing_urls)
                     continue
 
-                # 별도 request로 상세페이지 조회
-                detail_res = requests.get(link, headers=HEADERS, timeout=10, verify=False)
-                detail_soup = BeautifulSoup(detail_res.text, 'html.parser')
+                try:
+                    page.goto(link, wait_until="domcontentloaded", timeout=15000)
+                    time.sleep(2)
+                    detail_html = page.content()
+                    detail_soup = BeautifulSoup(detail_html, 'html.parser')
+                except:
+                    continue
                 
-                # 일반 첨부파일 링크 탐색
                 att_links = detail_soup.find_all('a', href=True)
                 downloaded_any = False
                 for att in att_links:
                     att_href = att['href'].lower()
                     att_text = att.get_text(strip=True)
-                    if '.pdf' in att_href or ('download' in att_href and 'pdf' in att_text.lower()) or 'filedown' in att_href:
+                    
+                    if '.hwp' in att_href or '.doc' in att_href or '.zip' in att_href:
+                        continue
+                    if '.hwp' in att_text.lower() or '.doc' in att_text.lower() or '.zip' in att_text.lower():
+                        continue
+                        
+                    is_pdf_link = False
+                    if '.pdf' in att_href or 'pdf' in att_text.lower():
+                        is_pdf_link = True
+                    elif 'filedown' in att_href or 'download' in att_href or '첨부' in att_text or '다운로드' in att_text:
+                        is_pdf_link = True
+                        
+                    if is_pdf_link:
                         if 'javascript:' in att_href: continue
                         
                         file_url = urllib.parse.urljoin(link, att['href'])
-                        
-                        # 첨부파일 이름 추출하여 중복 방지
                         if not att_text or len(att_text) < 3:
                             att_text = f"att_{len(existing_urls)}"
                             
-                        # 금감원 등에서 확장자가 없을 경우 추가 (HWP는 제외)
-                        if not att_text.lower().endswith('.pdf') and not att_text.lower().endswith('.hwp') and not att_text.lower().endswith('.hwpx'):
+                        if not att_text.lower().endswith('.pdf'):
                             att_text += ".pdf"
                             
                         clean_att_text = re.sub(r'[\/\\\:\*\?\"\<\>\|]', '_', att_text)
@@ -208,7 +296,6 @@ def scrape_generic_bbs(page, inst_name, list_url, data_list, existing_urls):
                         download_file(file_url, inst_name, final_title, date_str, data_list, existing_urls)
                         downloaded_any = True
                 
-                # 국제금융센터: reportdownload JS 함수에서 fno 추출하여 직접 다운로드
                 if not downloaded_any and 'kcif.or.kr' in link:
                     for btn in detail_soup.find_all(attrs={'onclick': True}):
                         onclick = btn.get('onclick', '')
@@ -218,16 +305,21 @@ def scrape_generic_bbs(page, inst_name, list_url, data_list, existing_urls):
                             pdf_url = f"https://www.kcif.or.kr/common/file/reportFileDownload?atch_no={fno}&lang=KR"
                             btn_title = btn.get('title', '') or title
                             if not btn_title.lower().endswith('.pdf'):
-                                btn_title += '.pdf'
+                                btn_title += ".pdf"
                             clean_title = re.sub(r'[\/\\\:\*\?\"\<\>\|]', '_', btn_title)
                             final_title = f"[{inst_name}] {title} - {clean_title}"
                             download_file(pdf_url, inst_name, final_title, date_str, data_list, existing_urls)
                             downloaded_any = True
-                            break  # 보통 첫 번째 파일이 메인 PDF
+                            break
+                            
+                try: page.goto(list_url, wait_until="domcontentloaded", timeout=30000)
+                except: pass
+                time.sleep(1)
 
             except Exception as e:
                 print(f"DEBUG: Exception in detail parsing: {e}")
-                pass
+                try: page.goto(list_url, wait_until="domcontentloaded", timeout=30000)
+                except: pass
                 
     except Exception as e:
         print(f"Error scraping {inst_name}: {e}")
