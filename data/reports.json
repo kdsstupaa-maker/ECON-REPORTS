@@ -844,5 +844,41 @@
         "type": "PDF",
         "url": "http://www.kiri.or.kr/pdf/연구자료/연구보고서/nre2025-17_7.pdf",
         "downloaded_at": "2026-08-14 07:06:08"
+    },
+    {
+        "institution": "금융감독원",
+        "title": "[금융감독원] 2026년 7월 가계대출 동향(잠정) 및 「확대 가계부채 점검회의」 개최 - 260814_(보도자료) 2026년 7월 가계대출 동향(잠정) 및 「확대 가계부채 점검회의」 개최.pdf(파일크기_ 368KB).pdf",
+        "date": "2026-08-14",
+        "filename": "금융감독원_773129c2.pdf",
+        "type": "PDF",
+        "url": "https://www.fss.or.kr/fss/cmmn/file/fileDown.do?menuNo=200218&atchFileId=c61d704e9cbb4c01b39009430e5aa9dc&fileSn=2&bbsId=",
+        "downloaded_at": "2026-08-17 07:00:46"
+    },
+    {
+        "institution": "금융감독원",
+        "title": "[금융감독원] 2026년 7월 가계대출 동향(잠정) 및 「확대 가계부채 점검회의」 개최 - 260814_(별첨) 확대 가계부채 점검회의 금융위원장 모두발언.pdf(파일크기_ 393KB).pdf",
+        "date": "2026-08-14",
+        "filename": "금융감독원_fc45c47b.pdf",
+        "type": "PDF",
+        "url": "https://www.fss.or.kr/fss/cmmn/file/fileDown.do?menuNo=200218&atchFileId=c61d704e9cbb4c01b39009430e5aa9dc&fileSn=4&bbsId=",
+        "downloaded_at": "2026-08-17 07:00:46"
+    },
+    {
+        "institution": "금융감독원",
+        "title": "[금융감독원] 가상자산사업자 신고제 강화에 맞춰 신고매뉴얼을 전면 개정합니다. - 260813_(별첨1) 개정 신고매뉴얼('26.8.20일 시행 기준).pdf(파일크기_ 2,088KB).pdf",
+        "date": "2026-08-13",
+        "filename": "금융감독원_13961654.pdf",
+        "type": "PDF",
+        "url": "https://www.fss.or.kr/fss/cmmn/file/fileDown.do?menuNo=200218&atchFileId=095c1613e78e438399872ee879aade3b&fileSn=3&bbsId=",
+        "downloaded_at": "2026-08-17 07:00:51"
+    },
+    {
+        "institution": "금융감독원",
+        "title": "[금융감독원] 가상자산사업자 신고제 강화에 맞춰 신고매뉴얼을 전면 개정합니다. - 260813_(별첨2) 신고매뉴얼 설명회 자료.pdf(파일크기_ 863KB).pdf",
+        "date": "2026-08-13",
+        "filename": "금융감독원_57d8e656.pdf",
+        "type": "PDF",
+        "url": "https://www.fss.or.kr/fss/cmmn/file/fileDown.do?menuNo=200218&atchFileId=095c1613e78e438399872ee879aade3b&fileSn=4&bbsId=",
+        "downloaded_at": "2026-08-17 07:00:51"
     }
 ]
