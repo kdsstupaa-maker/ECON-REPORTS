@@ -1,68 +1,5 @@
 [
     {
-        "institution": "한국은행",
-        "title": "[한국은행] 통화정책방향(2026.10.22) - 국문보도자료(2610).pdf",
-        "date": "2026-10-22",
-        "filename": "한국은행_b0e51832.pdf",
-        "type": "PDF",
-        "url": "https://www.bok.or.kr/fileSrc/portal/716978019b494cbba77dc86b3b05142a/2/3e4b7937a7eb4de48ce2bce7a1008f33.pdf",
-        "downloaded_at": "2026-10-25 07:00:13"
-    },
-    {
-        "institution": "한국은행",
-        "title": "[한국은행] 통화정책방향(2026.10.22) - 참고자료(2610).pdf",
-        "date": "2026-10-22",
-        "filename": "한국은행_59ae9ed5.pdf",
-        "type": "PDF",
-        "url": "https://www.bok.or.kr/fileSrc/portal/716978019b494cbba77dc86b3b05142a/4/1546d261f07340e6bee9b44482cb6869.pdf",
-        "downloaded_at": "2026-10-25 07:00:14"
-    },
-    {
-        "institution": "산업연구원",
-        "title": "[산업연구원] 석유 최고가격제의 가격안정 효과 - (산업연구원) 보고서 - 석유 최고가격제의 가격안정 효과.pdf",
-        "date": "2026-10-22",
-        "filename": "산업연구원_9f55a13a.pdf",
-        "type": "PDF",
-        "url": "https://www.kiet.re.kr/common/file/userDownload?atch_no=5oIsl0UV5EOBGzFhTrvGUw%3D%3D",
-        "downloaded_at": "2026-10-25 07:00:54"
-    },
-    {
-        "institution": "금융감독원",
-        "title": "[금융감독원] 여신전문금융업감독규정 개정안 규정변경예고(‘26.10.23.~12.2.) 실시 - 261023_(보도자료) 여신전문금융업감독규정 개정안 규정변경예고(‘26.10.23.~12.2.) 실시.pdf\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t(파일크기_ 306KB).pdf",
-        "date": "2026-10-23",
-        "filename": "금융감독원_6cad777c.pdf",
-        "type": "PDF",
-        "url": "https://www.fss.or.kr/fss/cmmn/file/fileDown.do?menuNo=200218&atchFileId=34196f6dba3540d592c1ebb6fa0829ce&fileSn=2&bbsId=",
-        "downloaded_at": "2026-10-25 07:01:08"
-    },
-    {
-        "institution": "금융감독원",
-        "title": "[금융감독원] 261023_(보도자료) 여신전문금융업감독규정 개정안 규정변경예고(‘26.10.23.~12.2.) 실시.hwpx.pdf",
-        "date": "2026-10-23",
-        "filename": "금융감독원_be831c07.pdf",
-        "type": "PDF",
-        "url": "https://www.fss.or.kr/fss/cmmn/file/fileDown.do?menuNo=200218&atchFileId=34196f6dba3540d592c1ebb6fa0829ce&fileSn=1&bbsId=",
-        "downloaded_at": "2026-10-25 07:01:11"
-    },
-    {
-        "institution": "금융감독원",
-        "title": "[금융감독원] 26.8월말 국내은행의 원화대출 연체율 현황(잠정) - 261022_(보도자료) 26.8월말 국내은행의 원화대출 연체율 현황(잠정).pdf\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t(파일크기_ 326KB).pdf",
-        "date": "2026-10-23",
-        "filename": "금융감독원_5d01ac2c.pdf",
-        "type": "PDF",
-        "url": "https://www.fss.or.kr/fss/cmmn/file/fileDown.do?menuNo=200218&atchFileId=e3309b334c724e288e3ad4f1006ed84e&fileSn=2&bbsId=",
-        "downloaded_at": "2026-10-25 07:01:14"
-    },
-    {
-        "institution": "금융감독원",
-        "title": "[금융감독원] 유명 가상자산거래소의 블록체인 네트워크를 사칭한 가짜 체인 사기에 주의하세요 - 261022_(보도자료) 유명 가상자산거래소의 블록체인 네트워크를 사칭한 가짜 체인 사기에 주의하세요.pdf\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t(파일크기_ 490KB).pdf",
-        "date": "2026-10-22",
-        "filename": "금융감독원_2af783fd.pdf",
-        "type": "PDF",
-        "url": "https://www.fss.or.kr/fss/cmmn/file/fileDown.do?menuNo=200218&atchFileId=66499ed7059b470698746c06d41c3f78&fileSn=2&bbsId=",
-        "downloaded_at": "2026-10-25 07:01:19"
-    },
-    {
         "institution": "금융감독원",
         "title": "[금융감독원] 26년 3분기 등록 ABS 발행 실적 - 261028_(보도자료) 26년 3분기 등록 ABS 발행 실적.pdf\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t(파일크기_ 459KB).pdf",
         "date": "2026-10-29",
@@ -196,5 +133,50 @@
         "type": "PDF",
         "url": "https://www.fss.or.kr/fss/cmmn/file/fileDown.do?menuNo=200218&atchFileId=8dd87b307788477eaf927ca7c7e57f65&fileSn=2&bbsId=",
         "downloaded_at": "2026-10-31 07:01:30"
+    },
+    {
+        "institution": "금융감독원",
+        "title": "[금융감독원] 글로벌 해킹 위협에 대비한 국내 가상자산사업자의 사고대응력 제고를 위해 긴밀하고 신속하게 대응해 나가겠습니다. - 261102_(보도참고) 글로벌 해킹 위협에 대비한 국내 가상자산사업자의 사고대응력 제고를 위해 긴밀하고 신속하게 대응해 나가겠습니다..pdf\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t(파일크기_ 226KB).pdf",
+        "date": "2026-11-02",
+        "filename": "금융감독원_2c276e11.pdf",
+        "type": "PDF",
+        "url": "https://www.fss.or.kr/fss/cmmn/file/fileDown.do?menuNo=200218&atchFileId=bf7a86c51a1e4a79abd5b1ed300c3a23&fileSn=2&bbsId=",
+        "downloaded_at": "2026-11-03 07:00:45"
+    },
+    {
+        "institution": "금융감독원",
+        "title": "[금융감독원] 생산적 금융의 온기를 지방과 중소기업까지 이어갑니다. - 261102_(보도자료) 생산적 금융의 온기를 지방과 중소기업까지 이어갑니다..pdf\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t(파일크기_ 502KB).pdf",
+        "date": "2026-11-02",
+        "filename": "금융감독원_9f63de1e.pdf",
+        "type": "PDF",
+        "url": "https://www.fss.or.kr/fss/cmmn/file/fileDown.do?menuNo=200218&atchFileId=49ede78e5e804e67b6f5faa3269778ba&fileSn=2&bbsId=",
+        "downloaded_at": "2026-11-03 07:00:51"
+    },
+    {
+        "institution": "금융감독원",
+        "title": "[금융감독원] 생산적 금융의 온기를 지방과 중소기업까지 이어갑니다. - 261102_(별첨4) (안건3) 공급망금융 우수사례 발표(우리은행).pdf\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t(파일크기_ 14,400KB).pdf",
+        "date": "2026-11-02",
+        "filename": "금융감독원_584f906f.pdf",
+        "type": "PDF",
+        "url": "https://www.fss.or.kr/fss/cmmn/file/fileDown.do?menuNo=200218&atchFileId=49ede78e5e804e67b6f5faa3269778ba&fileSn=6&bbsId=",
+        "downloaded_at": "2026-11-03 07:00:52"
+    },
+    {
+        "institution": "금융감독원",
+        "title": "[금융감독원] 사회초년생 청년 운전자가 자동차보험 할인혜택을 쉽게 받을 수 있도록 가입 절차를 개선합니다 - 261102_(보도자료) 사회초년생 청년 운전자가 자동차보험 할인혜택을 쉽게 받을 수 있도록 가입 절차를 개선합니다.pdf\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t(파일크기_ 663KB).pdf",
+        "date": "2026-11-02",
+        "filename": "금융감독원_e277c389.pdf",
+        "type": "PDF",
+        "url": "https://www.fss.or.kr/fss/cmmn/file/fileDown.do?menuNo=200218&atchFileId=1e899a41a8264ec48f60c84f4b2a9a01&fileSn=2&bbsId=",
+        "downloaded_at": "2026-11-03 07:00:58"
+    },
+    {
+        "institution": "금융감독원",
+        "title": "[금융감독원] 자동 가입되는 시민안전보험, 보험금 청구까지 꼭 챙기세요 - 261030_(보도자료) 자동 가입되는 시민안전보험, 보험금 청구까지 꼭 챙기세요.pdf\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t(파일크기_ 754KB).pdf",
+        "date": "2026-11-01",
+        "filename": "금융감독원_4f3b513c.pdf",
+        "type": "PDF",
+        "url": "https://www.fss.or.kr/fss/cmmn/file/fileDown.do?menuNo=200218&atchFileId=b3c8fb67a2f44e91a6263abcc216155e&fileSn=2&bbsId=",
+        "downloaded_at": "2026-11-03 07:01:03"
     }
 ]
